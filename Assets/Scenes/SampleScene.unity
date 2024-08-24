@@ -318,6 +318,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: faec69c1ad005914ea1a9a6590fd420b, type: 2}
   - {fileID: 11400000, guid: 4156f90a825800546b43902750cf6037, type: 2}
   - {fileID: 11400000, guid: 4129202e4693b9e49b57e3e6f0702189, type: 2}
+  DialogueOption1: []
+  DialogueOption2: []
+  interactedDialogue: []
+  repeatDialoge: 1
+  interacted: 0
+  MultipleDialog: 0
 --- !u!4 &221878776
 Transform:
   m_ObjectHideFlags: 0
@@ -676,6 +682,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7f476c924e5c2c438f653e8a70c548a, type: 2}
   - {fileID: 11400000, guid: 7ef3ff071bd49e14c98c2f8f198820f4, type: 2}
   - {fileID: 11400000, guid: 518383666430e784ba6c3b963715610f, type: 2}
+  DialogueOption1: []
+  DialogueOption2: []
+  interactedDialogue: []
+  repeatDialoge: 1
+  interacted: 0
+  MultipleDialog: 0
 --- !u!4 &520584948
 Transform:
   m_ObjectHideFlags: 0
@@ -790,6 +802,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7f476c924e5c2c438f653e8a70c548a, type: 2}
   - {fileID: 11400000, guid: 7ef3ff071bd49e14c98c2f8f198820f4, type: 2}
   - {fileID: 11400000, guid: 6ade6c386a912cd4a8ec14e05bc00fa1, type: 2}
+  DialogueOption1: []
+  DialogueOption2: []
+  interactedDialogue: []
+  repeatDialoge: 1
+  interacted: 0
+  MultipleDialog: 0
 --- !u!1 &630072380
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +889,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 06b1313d511871b48ae0c18ecda88c3b, type: 2}
   - {fileID: 11400000, guid: cc5172c89856cdf479e20b7ba8d411d7, type: 2}
   - {fileID: 11400000, guid: da1247fa02c298c439a95f046189d029, type: 2}
+  DialogueOption1: []
+  DialogueOption2: []
+  interactedDialogue: []
+  repeatDialoge: 1
+  interacted: 0
+  MultipleDialog: 0
 --- !u!4 &630072383
 Transform:
   m_ObjectHideFlags: 0

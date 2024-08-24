@@ -12,6 +12,13 @@ public class Interaction : MonoBehaviour
     //Create DialogueA dan DialogueB untuk variation dan juga Bool value untuk dah interact ke belum 
 
     public List<Dialogues> Dialogue = new List<Dialogues>();
+    public List<Dialogues> interactedDialogue = new List<Dialogues>();
+    public bool repeatDialoge = true;
+
+    [SerializeField]
+    private bool interacted = false;
+    [SerializeField]   
+    private bool MultipleDialog = false;
 
     private bool insideTrigger;
 
@@ -51,9 +58,17 @@ public class Interaction : MonoBehaviour
         {
             Debug.Log("No Dialogue attached");
         }
-        else if (Dialogue != null)
+        else if (Dialogue != null && interacted != true && MultipleDialog == false)
         {
                 dialogmanager.Start_Dialog(Dialogue);
+            if (repeatDialoge != true) 
+            { 
+                interacted = true; 
+            }
+        }
+        else if (Dialogue != null && interacted == true && MultipleDialog == false)
+        {
+            dialogmanager.Start_Dialog(interactedDialogue);
         }
 
     }
