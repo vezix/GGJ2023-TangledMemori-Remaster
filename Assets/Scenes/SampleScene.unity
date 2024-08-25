@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 221878775}
   - component: {fileID: 221878774}
   m_Layer: 0
-  m_Name: npc (5)
+  m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,10 +318,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: faec69c1ad005914ea1a9a6590fd420b, type: 2}
   - {fileID: 11400000, guid: 4156f90a825800546b43902750cf6037, type: 2}
   - {fileID: 11400000, guid: 4129202e4693b9e49b57e3e6f0702189, type: 2}
-  DialogueOption1: []
-  DialogueOption2: []
-  interactedDialogue: []
-  repeatDialoge: 1
+  interactedDialogue:
+  - {fileID: 11400000, guid: 4129202e4693b9e49b57e3e6f0702189, type: 2}
+  repeatDialoge: 0
   interacted: 0
   MultipleDialog: 0
 --- !u!4 &221878776
@@ -612,7 +611,7 @@ GameObject:
   - component: {fileID: 520584947}
   - component: {fileID: 520584946}
   m_Layer: 0
-  m_Name: npc (2)
+  m_Name: Wife1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -682,10 +681,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7f476c924e5c2c438f653e8a70c548a, type: 2}
   - {fileID: 11400000, guid: 7ef3ff071bd49e14c98c2f8f198820f4, type: 2}
   - {fileID: 11400000, guid: 518383666430e784ba6c3b963715610f, type: 2}
-  DialogueOption1: []
-  DialogueOption2: []
-  interactedDialogue: []
-  repeatDialoge: 1
+  interactedDialogue:
+  - {fileID: 11400000, guid: 6ade6c386a912cd4a8ec14e05bc00fa1, type: 2}
+  repeatDialoge: 0
   interacted: 0
   MultipleDialog: 0
 --- !u!4 &520584948
@@ -716,7 +714,7 @@ GameObject:
   - component: {fileID: 619032357}
   - component: {fileID: 619032354}
   m_Layer: 0
-  m_Name: npc
+  m_Name: Wife2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -802,8 +800,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c7f476c924e5c2c438f653e8a70c548a, type: 2}
   - {fileID: 11400000, guid: 7ef3ff071bd49e14c98c2f8f198820f4, type: 2}
   - {fileID: 11400000, guid: 6ade6c386a912cd4a8ec14e05bc00fa1, type: 2}
-  DialogueOption1: []
-  DialogueOption2: []
   interactedDialogue: []
   repeatDialoge: 1
   interacted: 0
@@ -820,7 +816,7 @@ GameObject:
   - component: {fileID: 630072382}
   - component: {fileID: 630072381}
   m_Layer: 0
-  m_Name: npc (3)
+  m_Name: Coworker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -889,8 +885,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 06b1313d511871b48ae0c18ecda88c3b, type: 2}
   - {fileID: 11400000, guid: cc5172c89856cdf479e20b7ba8d411d7, type: 2}
   - {fileID: 11400000, guid: da1247fa02c298c439a95f046189d029, type: 2}
-  DialogueOption1: []
-  DialogueOption2: []
   interactedDialogue: []
   repeatDialoge: 1
   interacted: 0
@@ -2727,7 +2721,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1613335740}
   - {fileID: 1235317373}
-  - {fileID: 619032356}
   - {fileID: 520584948}
   - {fileID: 630072383}
   - {fileID: 221878776}
+  - {fileID: 619032356}
