@@ -11,6 +11,7 @@ public class Dialog_Manager : MonoBehaviour
     public TextMeshProUGUI DialogueText;
     public SimpleCharacterController PController;
     public Image DialogueImage;
+    public static Dialog_Manager Instance { get; private set; }
 
     public float textSpeed;
 
@@ -37,7 +38,28 @@ public class Dialog_Manager : MonoBehaviour
     private bool convodone = true;
 
     private float lastSpacePressTime = 0f;
-    private float spacePressCooldown = 0.5f; // Adjust this value as needed
+    private float spacePressCooldown = 0.5f; // Adjust this value as needed/
+
+    private void Awake()
+    {
+        // Singleton pattern to ensure only one instance of DialogueManager
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        // Initially hide the dialogue UI
+        HideDialogue();
+    }
+
+    public void HideDialogue()
+    {
+        DialogueObject.SetActive(false);
+    }
 
     public void Start_Dialog(List<Dialogues> _dialog)
     {
