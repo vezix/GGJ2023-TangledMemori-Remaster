@@ -11,6 +11,7 @@ public class DialogueChoiceManager : MonoBehaviour
     public TextMeshProUGUI DialogTitleText, DialogBodyText; // Text components for title and body
     public GameObject responseButtonPrefab; // Prefab for generating response buttons
     public Transform responseButtonContainer; // Container to hold response buttons
+    public Image DialogueImage;
 
     private void Awake()
     {
@@ -37,6 +38,15 @@ public class DialogueChoiceManager : MonoBehaviour
         // Set dialogue title and body text
         DialogTitleText.text = title;
         DialogBodyText.text = node.dialogueText;
+        if (node.Image == null)
+        {
+            DialogueImage.enabled = false;
+        }
+        else
+        {
+            DialogueImage.enabled = true;
+            DialogueImage.sprite = node.Image; ;
+        }
 
         // Remove any existing response buttons
         foreach (Transform child in responseButtonContainer)

@@ -14,28 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogueText: How you do
+    Image: {fileID: 21300000, guid: 6edf8924ee758ba4abc6a0b320515e19, type: 3}
     responses:
     - responseText: fine you?
       nextNode:
         dialogueText: Meh
+        Image: {fileID: 21300000, guid: d370439753b857e4a87ae788b5280c4d, type: 3}
         responses:
         - responseText: why?
           nextNode:
             dialogueText: Life's been rough
+            Image: {fileID: 21300000, guid: d7a4991766035834c95dcc9a429e8322, type: 3}
             responses:
             - responseText: Understandable have a nice day
               nextNode:
                 dialogueText: 
+                Image: {fileID: 0}
                 responses: []
         - responseText: Dont know dont care
           nextNode:
             dialogueText: 
+            Image: {fileID: 0}
             responses: []
     - responseText: Dont know dont care
       nextNode:
         dialogueText: hihi
+        Image: {fileID: 21300000, guid: 0b8397922ce5f4b42bc3d01e6f6db7bc, type: 3}
         responses:
         - responseText: Bye
           nextNode:
             dialogueText: 
+            Image: {fileID: 0}
             responses: []
