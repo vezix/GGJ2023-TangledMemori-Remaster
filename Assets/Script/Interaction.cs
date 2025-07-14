@@ -7,7 +7,7 @@ public class Interaction : MonoBehaviour
 {
 
     public Dialog_Manager dialogmanager;
-    public GameObject DialogueObject;
+    public NPCInteraction Parent;
 
     //Create DialogueA dan DialogueB untuk variation dan juga Bool value untuk dah interact ke belum 
 
@@ -17,56 +17,34 @@ public class Interaction : MonoBehaviour
 
     [SerializeField]
     private bool interacted = false;
-    [SerializeField]   
-    private bool MultipleDialog = false;
 
-    private bool insideTrigger;
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void Awake()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Player can chat with npc");
-            insideTrigger = true;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Byebye npc");
-            insideTrigger = false;
-        }
+      Parent = GetComponentInParent<NPCInteraction>();
     }
 
-    void Update()
+    void OnEnable()
     {
-        if ( (insideTrigger == true) && (!DialogueObject.activeSelf))
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                DialogueStart();
-            }
-        }
-
+        Parent.RefreshInteraction();
     }
 
-    void DialogueStart()
+    public void DialogueStart()
     {
 
         if (Dialogue == null)
         {
             Debug.Log("No Dialogue attached");
         }
-        else if (Dialogue != null && interacted != true && MultipleDialog == false)
+        else if (Dialogue != null && interacted != true)
         {
                 dialogmanager.Start_Dialog(Dialogue);
+            //pastikan dialogue tak repeat 
             if (repeatDialoge != true) 
             { 
                 interacted = true; 
             }
         }
-        else if (Dialogue != null && interacted == true && MultipleDialog == false)
+        else if (Dialogue != null && interacted == true)
         {
             dialogmanager.Start_Dialog(interactedDialogue);
         }
