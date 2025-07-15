@@ -23,10 +23,10 @@ public class Interaction : MonoBehaviour
       Parent = GetComponentInParent<NPCInteraction>();
     }
 
-    void OnEnable()
-    {
-        Parent.RefreshInteraction();
-    }
+    //void OnEnable()
+    //{
+    //    Parent.RefreshInteraction();
+    //}
 
     public void DialogueStart()
     {
