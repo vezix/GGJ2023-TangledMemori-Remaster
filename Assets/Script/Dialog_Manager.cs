@@ -149,7 +149,6 @@ public class Dialog_Manager : MonoBehaviour
 
     public void NextSentence()
     {
-
         if (currDialogueIndex < dialogueIndex)
         {
             Displaytext();
@@ -165,18 +164,23 @@ public class Dialog_Manager : MonoBehaviour
             }
             else
             {
-                begun = false;
-                ListIndex = 0;
-                dialogueIndex = 0;
-                currDialogueIndex = 0;
-                currListIndex = 0;
-                DialogueObject.SetActive(false);
-                DialogueText.text = "";
-                dialog_copy = null;
-                conversation = null;
-                PController.enabled = true;
+                EndDialogue();
             }
         }
+    }
+
+    private void EndDialogue()
+    {
+        begun = false;
+        ListIndex = 0;
+        dialogueIndex = 0;
+        currDialogueIndex = 0;
+        currListIndex = 0;
+        DialogueObject.SetActive(false);
+        DialogueText.text = "";
+        dialog_copy = null;
+        conversation = null;
+        PController.enabled = true;
     }
 
 }

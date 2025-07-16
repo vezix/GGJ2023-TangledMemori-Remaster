@@ -43,17 +43,17 @@ public class CoWorkerNPCInteraction : MonoBehaviour
 
     void Update()
     {
-        if ((insideTrigger == true) && (!DialogueObject.activeSelf))
+        if ((insideTrigger == true) && (DialogueObject.activeSelf == false))
         {
-            if (gameManager.wife != 0)
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                interaction.DialogueStart();
+            }
+            if (gameManager.wife != 0 && DialogueList1.activeSelf == false)
             {
                 DialogueList.SetActive(false);
                 DialogueList1.SetActive(true);
                 RefreshInteraction();
-            }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                interaction.DialogueStart();
             }
         }
 
