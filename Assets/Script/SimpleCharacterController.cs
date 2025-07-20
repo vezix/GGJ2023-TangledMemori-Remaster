@@ -11,6 +11,8 @@ public class SimpleCharacterController : MonoBehaviour
     private bool isFacingRight = true;
     public Animator animator;
 
+    private Vector2 savedPosition;
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -58,5 +60,10 @@ public class SimpleCharacterController : MonoBehaviour
             localScale.x *= -1f;
             transform.localScale = localScale;
         }
+    }
+
+    private void OnDisable()
+    {
+        SetVelocity(0f);
     }
 }

@@ -73,7 +73,7 @@ public class Dialog_Manager : MonoBehaviour
         else
         {
             DialogueImage.enabled = true;
-            DialogueImage.sprite = _dialog[currListIndex].Image; ;
+            DialogueImage.sprite = _dialog[currListIndex].Image;
         }
 
         DialogueName.text = _dialog[currListIndex].npcName;

@@ -5,9 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-
-public class ChooseFinal : MonoBehaviour
+public class ChooseTuto : MonoBehaviour
 {
+
     private bool insideTrigger = false;
     public string scene;
     public GameObject TextObject;
@@ -15,28 +15,16 @@ public class ChooseFinal : MonoBehaviour
     public SimpleCharacterController PController;
     public GameObject ExeclaimationMark;
 
-    public Sprite Final1;
-    public Sprite Final2;
-    public Sprite Final3;
-
-    public Image ButtonL;
-    public Image ButtonC;
-    public Image ButtonR;
-
-    public GameObject ButtonBlocker;
-
-    GameManager gameManager;
-
-    public void Start()
+    private void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        ExeclaimationMark.SetActive(false);
     }
-
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+
             Debug.Log("Can Interact");
             insideTrigger = true;
         }
@@ -53,18 +41,8 @@ public class ChooseFinal : MonoBehaviour
 
     private void Update()
     {
-        if ((gameManager.wife == 1) && (gameManager.coworker == 1) && (gameManager.stranger == 1))
-        {
-            ButtonL.sprite = Final1;
-            ButtonC.sprite = Final2;
-            ButtonR.sprite = Final3;
-            ButtonBlocker.SetActive(false);
-            Textbox.text = "Who killed you?";
-        }
-
         if (insideTrigger == true && (!TextObject.activeSelf))
         {
-
             ExeclaimationMark.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -74,12 +52,12 @@ public class ChooseFinal : MonoBehaviour
         }
         else if (insideTrigger == true && (TextObject.activeSelf))
         {
-
             ExeclaimationMark.SetActive(false);
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 TextObject.SetActive(false);
                 PController.enabled = true;
+
                 ExeclaimationMark.SetActive(true);
             }
         }
@@ -88,27 +66,15 @@ public class ChooseFinal : MonoBehaviour
     }
 
 
-    public void ChooseRight()
+    public void Choose()
     {
         StartCoroutine("Right");
     }
 
-    public void ChooseWrong()
-    {
-        StartCoroutine("Wrong");
-    }
-
-    IEnumerator Wrong()
-    {
-        Textbox.text = "Try Again";
-        yield return new WaitForSeconds(1.0f);
-        Textbox.text = "Who do you think murdered you?";
-    }
-
     IEnumerator Right()
     {
-        Textbox.text = "You Choose Right";
-        yield return new WaitForSeconds(3.0f);
+        Textbox.text = ".....";
+        yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene(scene);
     }
 }
