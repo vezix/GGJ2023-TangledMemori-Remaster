@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public int wife = 0;
     public int coworker = 0;
+    public int stranger = 0;
 
     void Awake()
     {

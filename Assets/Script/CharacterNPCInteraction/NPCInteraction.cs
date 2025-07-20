@@ -2,20 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoWorkerNPCInteraction : MonoBehaviour
+public class NPCInteraction : MonoBehaviour
 {
-    public GameObject DialogueList;
-    public GameObject DialogueList1;
-    public GameObject DialogueObject;
-    public GameObject ExeclaimationMark;
 
+    public GameObject DialogueObject;
     private bool insideTrigger;
     public Interaction interaction;
-    GameManager gameManager;
+    public GameObject ExeclaimationMark;
 
     public void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        //NOT FINAL, create a script where when you 
         interaction = GetComponentInChildren<Interaction>();
         ExeclaimationMark.SetActive(false);
     }
@@ -32,7 +29,6 @@ public class CoWorkerNPCInteraction : MonoBehaviour
         {
             Debug.Log("Player can chat with npc");
             insideTrigger = true;
-            ExeclaimationMark.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -41,29 +37,22 @@ public class CoWorkerNPCInteraction : MonoBehaviour
         {
             Debug.Log("Byebye npc");
             insideTrigger = false;
-            ExeclaimationMark.SetActive(false);
         }
     }
 
     void Update()
     {
-        if ((insideTrigger == true) && (DialogueObject.activeSelf == false))
+        if ((insideTrigger == true) && (!DialogueObject.activeSelf))
         {
             ExeclaimationMark.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 interaction.DialogueStart();
-                gameManager.coworker = 1;
-            }
-            if (gameManager.wife != 0 && DialogueList1.activeSelf == false)
-            {
-                DialogueList.SetActive(false);
-                DialogueList1.SetActive(true);
-                RefreshInteraction();
             }
         }
         else
             ExeclaimationMark.SetActive(false);
 
     }
+
 }

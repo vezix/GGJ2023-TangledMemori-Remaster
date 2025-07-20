@@ -8,12 +8,19 @@ public class MovetoDifferentRoom : MonoBehaviour
 {
     public string scene;
     private bool currentinteract = false;
+    public GameObject ExeclaimationMark;
+
+    private void Start()
+    {
+         ExeclaimationMark.SetActive(false);
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player In Portal");
             currentinteract = true;
+            ExeclaimationMark.SetActive(true);  
 
         }
     }
@@ -24,6 +31,7 @@ public class MovetoDifferentRoom : MonoBehaviour
         {
             Debug.Log("Player exit Portal");
             currentinteract = false;
+            ExeclaimationMark.SetActive(false) ;
         }
     }
 

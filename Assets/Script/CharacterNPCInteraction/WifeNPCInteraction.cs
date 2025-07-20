@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class WifeNPCInteraction : MonoBehaviour
 {
+    public GameObject DialogueList;
+    public GameObject DialogueList1;
     public GameObject DialogueObject;
+    public GameObject ExeclaimationMark;
+
+
     private bool insideTrigger;
     public Interaction interaction;
     GameManager gameManager;
 
     public void Start()
     {
-        //NOT FINAL, create a script where when you 
         gameManager = FindObjectOfType<GameManager>();
         interaction = GetComponentInChildren<Interaction>();
+        ExeclaimationMark.SetActive(false);
     }
 
     public void RefreshInteraction()
@@ -28,6 +33,7 @@ public class WifeNPCInteraction : MonoBehaviour
         {
             Debug.Log("Player can chat with npc");
             insideTrigger = true;
+
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -41,15 +47,23 @@ public class WifeNPCInteraction : MonoBehaviour
 
     void Update()
     {
-        if ((insideTrigger == true) && (!DialogueObject.activeSelf))
+        if ((insideTrigger == true) && (DialogueObject.activeSelf == false))
         {
-
+            ExeclaimationMark.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 interaction.DialogueStart();
                 gameManager.wife = 1;
             }
+            if (gameManager.coworker != 0 && DialogueList1.activeSelf == false)
+            {
+                DialogueList.SetActive(false);
+                DialogueList1.SetActive(true);
+                RefreshInteraction();
+            }
         }
+        else
+            ExeclaimationMark.SetActive(false);
 
     }
 }

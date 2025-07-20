@@ -7,7 +7,7 @@ public class Interaction : MonoBehaviour
 {
 
     public Dialog_Manager dialogmanager;
-    public NPCInteraction Parent;
+    //public NPCInteraction Parent;
 
     //Create DialogueA dan DialogueB untuk variation dan juga Bool value untuk dah interact ke belum 
 
@@ -18,10 +18,10 @@ public class Interaction : MonoBehaviour
     [SerializeField]
     private bool interacted = false;
 
-    private void Awake()
-    {
-      Parent = GetComponentInParent<NPCInteraction>();
-    }
+    //private void Awake()
+    //{
+    //  Parent = GetComponentInParent<NPCInteraction>();
+    //}
 
     //void OnEnable()
     //{
