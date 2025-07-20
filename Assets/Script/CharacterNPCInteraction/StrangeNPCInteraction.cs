@@ -11,6 +11,7 @@ public class StrangeNPCInteraction : MonoBehaviour
 
 
     private bool insideTrigger;
+    bool firstTime = true;
     public Interaction interaction;
     GameManager gameManager;
 
@@ -54,6 +55,7 @@ public class StrangeNPCInteraction : MonoBehaviour
             {
                 interaction.DialogueStart();
                 gameManager.stranger = 1;
+                firstTime = false;
             }
             if (gameManager.wife != 0 && gameManager.coworker !=0 && DialogueList1.activeSelf == false)
             {

@@ -11,6 +11,7 @@ public class WifeNPCInteraction : MonoBehaviour
 
 
     private bool insideTrigger;
+    bool firstTime = true;
     public Interaction interaction;
     GameManager gameManager;
 
@@ -54,6 +55,7 @@ public class WifeNPCInteraction : MonoBehaviour
             {
                 interaction.DialogueStart();
                 gameManager.wife = 1;
+                firstTime = false;
             }
             if (gameManager.coworker != 0 && DialogueList1.activeSelf == false)
             {

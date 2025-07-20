@@ -10,6 +10,7 @@ public class CoWorkerNPCInteraction : MonoBehaviour
     public GameObject ExeclaimationMark;
 
     private bool insideTrigger;
+    bool firstTime = true;
     public Interaction interaction;
     GameManager gameManager;
 
@@ -54,8 +55,9 @@ public class CoWorkerNPCInteraction : MonoBehaviour
             {
                 interaction.DialogueStart();
                 gameManager.coworker = 1;
+                firstTime = false;
             }
-            if (gameManager.wife != 0 && DialogueList1.activeSelf == false)
+            if (gameManager.wife != 0 && DialogueList1.activeSelf == false )
             {
                 DialogueList.SetActive(false);
                 DialogueList1.SetActive(true);
