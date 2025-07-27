@@ -11,15 +11,25 @@ public class Keypad : MonoBehaviour
     public GameObject Phone;
     public SimpleCharacterController PController;
     public string scene;
-
+    public GameObject ExeclaimationMark;
+    public GameObject ButtonBlocker;
     private string Answer = "8562";
     bool insideTrigger = false;
+    bool couroutineRunning = false;
+    
+
+    private void Start()
+    {
+        ExeclaimationMark.SetActive(false);
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
 
-            Debug.Log("Yes");
+         
+            Debug.Log("Can Interact With Phone");
+
             insideTrigger = true;
         }
     }
@@ -28,7 +38,8 @@ public class Keypad : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Bye");
+            Debug.Log("Cannnot Interact With Phone");
+
             insideTrigger = false;
         }
     }
@@ -37,26 +48,37 @@ public class Keypad : MonoBehaviour
     {
         if (insideTrigger == true && (!Phone.activeSelf))
         {
+            ExeclaimationMark.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Phone.SetActive(true);
                 PController.enabled = false;
+                ExeclaimationMark.SetActive(false);
+
             }
         }
-        else if (insideTrigger == true && (Phone.activeSelf))
+        else if (insideTrigger == true && (Phone.activeSelf) && (couroutineRunning == false) )
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Phone.SetActive(false);
                 PController.enabled = true;
+                ExeclaimationMark.SetActive(false);
             }
         }
+        else
+            ExeclaimationMark.SetActive(false);
     }
 
 
     public void Number(int number)
     {
         Ans.text += number.ToString();
+
+        if (Ans.text.Length > 4)
+        {
+            Ans.text = Ans.text.Substring(0, 4);
+        }
     }
 
     public void Execute()
@@ -65,20 +87,24 @@ public class Keypad : MonoBehaviour
         {
             Ans.text = "Correct";
             StartCoroutine("OneS");
-            SceneManager.LoadScene(scene);
+            //SceneManager.LoadScene(scene);
         }
         else
         {
             Ans.text = "wrong pass";
             StartCoroutine("OneS");
-            
+
         }
     }
 
     IEnumerator OneS()
     {
+        ButtonBlocker.SetActive(true);
+        couroutineRunning = true;
         yield return new WaitForSeconds(1.0f);
         Ans.text = "";
+        ButtonBlocker.SetActive(false);
+        couroutineRunning = false;
     }
 
 }
