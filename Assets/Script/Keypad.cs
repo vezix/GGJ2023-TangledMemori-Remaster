@@ -16,18 +16,21 @@ public class Keypad : MonoBehaviour
     private string Answer = "8562";
     bool insideTrigger = false;
     bool couroutineRunning = false;
-    
+    public GameObject DialogueObject;
+    public Interaction interaction;
+
 
     private void Start()
     {
         ExeclaimationMark.SetActive(false);
+        interaction = GetComponentInChildren<Interaction>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
 
-         
+
             Debug.Log("Can Interact With Phone");
 
             insideTrigger = true;
@@ -46,7 +49,7 @@ public class Keypad : MonoBehaviour
 
     private void Update()
     {
-        if (insideTrigger == true && (!Phone.activeSelf))
+        if (insideTrigger == true && (!Phone.activeSelf) && (!DialogueObject.activeSelf))
         {
             ExeclaimationMark.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Space))
@@ -73,11 +76,9 @@ public class Keypad : MonoBehaviour
 
     public void Number(int number)
     {
-        Ans.text += number.ToString();
-
-        if (Ans.text.Length > 4)
+        if (Ans.text.Length < 4)
         {
-            Ans.text = Ans.text.Substring(0, 4);
+            Ans.text += number.ToString();
         }
     }
 
@@ -87,6 +88,7 @@ public class Keypad : MonoBehaviour
         {
             Ans.text = "Correct";
             StartCoroutine("OneS");
+            StartDialogue();
             //SceneManager.LoadScene(scene);
         }
         else
@@ -105,6 +107,17 @@ public class Keypad : MonoBehaviour
         Ans.text = "";
         ButtonBlocker.SetActive(false);
         couroutineRunning = false;
+    }
+
+    public void RefreshInteraction()
+    {
+        interaction = GetComponentInChildren<Interaction>();
+    }
+
+    public void StartDialogue()
+    {
+        Phone.SetActive(false);
+        interaction.DialogueStart();
     }
 
 }
