@@ -25,6 +25,8 @@ public class ChooseFinal : MonoBehaviour
 
     public GameObject ButtonBlocker;
 
+    private bool FinalSelection = false;
+
     GameManager gameManager;
 
     public void Start()
@@ -58,8 +60,13 @@ public class ChooseFinal : MonoBehaviour
             ButtonL.sprite = Final1;
             ButtonC.sprite = Final2;
             ButtonR.sprite = Final3;
-            ButtonBlocker.SetActive(false);
-            Textbox.text = "Who killed you?";
+
+            if (FinalSelection == false)
+            {
+                FinalSelection = true;
+                ButtonBlocker.SetActive(false);
+                Textbox.text = "Who killed you?";
+            }
         }
 
         if (insideTrigger == true && (!TextObject.activeSelf))
@@ -100,15 +107,19 @@ public class ChooseFinal : MonoBehaviour
 
     IEnumerator Wrong()
     {
+        ButtonBlocker.SetActive(true);
         Textbox.text = "Try Again";
         yield return new WaitForSeconds(1.0f);
         Textbox.text = "Who do you think murdered you?";
+        ButtonBlocker.SetActive(false);
     }
 
     IEnumerator Right()
     {
+        ButtonBlocker.SetActive(true);
         Textbox.text = "You Choose Right";
         yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene(scene);
+        ButtonBlocker.SetActive(false);
     }
 }

@@ -89,6 +89,7 @@ public class Keypad : MonoBehaviour
             Ans.text = "Correct";
             StartCoroutine("OneS");
             StartDialogue();
+            this.gameObject.GetComponent<Keypad>().enabled = false;
             //SceneManager.LoadScene(scene);
         }
         else

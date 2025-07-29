@@ -14,6 +14,7 @@ public class ChooseTuto : MonoBehaviour
     public TextMeshProUGUI Textbox;
     public SimpleCharacterController PController;
     public GameObject ExeclaimationMark;
+    public GameObject ButtonBlocker;
 
     private void Start()
     {
@@ -73,6 +74,7 @@ public class ChooseTuto : MonoBehaviour
 
     IEnumerator Right()
     {
+        ButtonBlocker.SetActive(true);
         Textbox.text = ".....";
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene(scene);
