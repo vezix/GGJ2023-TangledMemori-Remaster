@@ -6,12 +6,15 @@ public class StrangeNPCInteraction : MonoBehaviour
 {
     public GameObject DialogueList;
     public GameObject DialogueList1;
+    public GameObject DialogueList2;
     public GameObject DialogueObject;
     public GameObject ExeclaimationMark;
 
 
     private bool insideTrigger;
     bool firstTime = true;
+    [SerializeField]
+    bool WalletFirstTime = true;
     public Interaction interaction;
     GameManager gameManager;
 
@@ -54,6 +57,10 @@ public class StrangeNPCInteraction : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 interaction.DialogueStart();
+                if (gameManager.wallet != 0)
+                {
+                    WalletFirstTime = false;
+                }
                 gameManager.stranger = 1;
                 firstTime = false;
             }
@@ -61,8 +68,24 @@ public class StrangeNPCInteraction : MonoBehaviour
             {
                 DialogueList.SetActive(false);
                 DialogueList1.SetActive(true);
+                DialogueList2.SetActive(false);
                 RefreshInteraction();
             }
+            if (gameManager.wallet !=0 && WalletFirstTime == true && DialogueList1.activeSelf == false)
+            {
+                DialogueList.SetActive(false);
+                DialogueList1.SetActive(false);
+                DialogueList2.SetActive(true);
+                RefreshInteraction();
+            }
+            else if (gameManager.wife == 0 && gameManager.coworker == 0 && WalletFirstTime == false && DialogueList1.activeSelf == false)
+            {
+                DialogueList.SetActive(true);
+                DialogueList1.SetActive(false);
+                DialogueList2.SetActive(false);
+                RefreshInteraction();
+            }
+
         }
         else
             ExeclaimationMark.SetActive(false);

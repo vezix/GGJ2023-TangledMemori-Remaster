@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int wife = 0;
     public int coworker = 0;
     public int stranger = 0;
+    public int wallet = 0;
 
     void Awake()
     {
