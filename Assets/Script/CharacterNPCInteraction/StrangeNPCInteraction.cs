@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StrangeNPCInteraction : MonoBehaviour
@@ -9,7 +10,7 @@ public class StrangeNPCInteraction : MonoBehaviour
     public GameObject DialogueList2;
     public GameObject DialogueObject;
     public GameObject ExeclaimationMark;
-
+    public GameObject Jumscare;
 
     private bool insideTrigger;
     bool firstTime = true;
@@ -51,7 +52,7 @@ public class StrangeNPCInteraction : MonoBehaviour
 
     void Update()
     {
-        if ((insideTrigger == true) && (DialogueObject.activeSelf == false))
+        if ((insideTrigger == true) && (DialogueObject.activeSelf == false) && (Jumscare.activeSelf == false))
         {
             ExeclaimationMark.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Space))
@@ -84,6 +85,10 @@ public class StrangeNPCInteraction : MonoBehaviour
                 DialogueList1.SetActive(false);
                 DialogueList2.SetActive(false);
                 RefreshInteraction();
+            }
+            if (gameManager.stranger == 3)
+            {
+                this.gameObject.SetActive(false);   
             }
 
         }

@@ -11,6 +11,9 @@ public class Dialog_Manager : MonoBehaviour
     public TextMeshProUGUI DialogueText;
     public SimpleCharacterController PController;
     public Image DialogueImage;
+    //Jumscare
+    public GameObject scare;
+    private bool scareBool=false;
     public static Dialog_Manager Instance { get; private set; }
 
     public float textSpeed;
@@ -40,6 +43,8 @@ public class Dialog_Manager : MonoBehaviour
     private float lastSpacePressTime = 0f;
     private float spacePressCooldown = 0.5f; // Adjust this value as needed/
 
+    GameManager gameManager;
+
     private void Awake()
     {
         // Singleton pattern to ensure only one instance of DialogueManager
@@ -54,6 +59,11 @@ public class Dialog_Manager : MonoBehaviour
 
         // Initially hide the dialogue UI
         HideDialogue();
+    }
+
+    public void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     public void HideDialogue()
@@ -180,7 +190,24 @@ public class Dialog_Manager : MonoBehaviour
         DialogueText.text = "";
         dialog_copy = null;
         conversation = null;
+        if (scareBool == true)
+        {
+            StartCoroutine(JS());
+        }
         PController.enabled = true;
+    }
+
+    public void SetScareBool(bool _Scarebool)
+    {
+        scareBool = _Scarebool;
+    }
+
+    IEnumerator JS()
+    {
+        scare.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        scare.gameObject.SetActive(false);
+        scareBool = false;
     }
 
 }

@@ -14,6 +14,7 @@ public class Interaction : MonoBehaviour
     public List<Dialogues> Dialogue = new List<Dialogues>();
     public List<Dialogues> interactedDialogue = new List<Dialogues>();
     public bool repeatDialoge = true;
+    public bool Jumscare = false;
 
     [SerializeField]
     private bool interacted = false;
@@ -37,7 +38,8 @@ public class Interaction : MonoBehaviour
         }
         else if (Dialogue != null && interacted != true)
         {
-                dialogmanager.Start_Dialog(Dialogue);
+            dialogmanager.SetScareBool(Jumscare);
+            dialogmanager.Start_Dialog(Dialogue);
             //pastikan dialogue tak repeat 
             if (repeatDialoge != true) 
             { 
@@ -46,6 +48,7 @@ public class Interaction : MonoBehaviour
         }
         else if (Dialogue != null && interacted == true)
         {
+            dialogmanager.SetScareBool(Jumscare);
             dialogmanager.Start_Dialog(interactedDialogue);
         }
 
