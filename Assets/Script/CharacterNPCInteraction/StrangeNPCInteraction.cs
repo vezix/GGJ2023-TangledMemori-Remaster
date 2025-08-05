@@ -13,7 +13,6 @@ public class StrangeNPCInteraction : MonoBehaviour
     public GameObject Jumscare;
 
     private bool insideTrigger;
-    bool firstTime = true;
     [SerializeField]
     bool WalletFirstTime = true;
     public Interaction interaction;
@@ -24,11 +23,30 @@ public class StrangeNPCInteraction : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         interaction = GetComponentInChildren<Interaction>();
         ExeclaimationMark.SetActive(false);
+        if (gameManager.stranger == 3)
+        {
+            this.gameObject.SetActive(false);
+        }
+        if (gameManager.wife == 1 && gameManager.coworker == 1 && gameManager.wallet == 0 && DialogueList1.activeSelf == false)
+        {
+            DialogueList.SetActive(false);
+            DialogueList1.SetActive(true);
+            DialogueList2.SetActive(false);
+            RefreshInteraction();
+        }
     }
 
     public void RefreshInteraction()
     {
         interaction = GetComponentInChildren<Interaction>();
+        if (interaction.Jumscare == true)
+        {
+            interaction.dialogmanager.AfterLastDialogue.AddListener(StartJS);
+        }
+        else if (interaction.Jumscare == false)
+        {
+            interaction.dialogmanager.AfterLastDialogue.RemoveListener(StartJS);
+        }
     }
 
 
@@ -58,42 +76,41 @@ public class StrangeNPCInteraction : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 interaction.DialogueStart();
+                if (gameManager.wife == 1 && gameManager.coworker == 1 && gameManager.wallet == 0 && gameManager.stranger == 0)
+                {
+                    gameManager.stranger = 1;
+
+                }
                 if (gameManager.wallet != 0)
                 {
                     WalletFirstTime = false;
                 }
-                gameManager.stranger = 1;
-                firstTime = false;
             }
-            if (gameManager.wife != 0 && gameManager.coworker !=0 && DialogueList1.activeSelf == false)
-            {
-                DialogueList.SetActive(false);
-                DialogueList1.SetActive(true);
-                DialogueList2.SetActive(false);
-                RefreshInteraction();
-            }
-            if (gameManager.wallet !=0 && WalletFirstTime == true && DialogueList1.activeSelf == false)
+            if (gameManager.wife == 1 && gameManager.coworker == 1 &&  gameManager.stranger == 2 && gameManager.wallet == 1 && WalletFirstTime == true && DialogueList2.activeSelf == false)
             {
                 DialogueList.SetActive(false);
                 DialogueList1.SetActive(false);
                 DialogueList2.SetActive(true);
                 RefreshInteraction();
             }
-            else if (gameManager.wife == 0 && gameManager.coworker == 0 && WalletFirstTime == false && DialogueList1.activeSelf == false)
-            {
-                DialogueList.SetActive(true);
-                DialogueList1.SetActive(false);
-                DialogueList2.SetActive(false);
-                RefreshInteraction();
-            }
-            if (gameManager.stranger == 3)
-            {
-                this.gameObject.SetActive(false);   
-            }
 
         }
         else
             ExeclaimationMark.SetActive(false);
 
+    }
+
+    void StartJS()
+    {
+        StartCoroutine(JS());
+    }
+
+    IEnumerator JS()
+    {
+        Jumscare.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        gameManager.stranger = 3;
+        Jumscare.gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }

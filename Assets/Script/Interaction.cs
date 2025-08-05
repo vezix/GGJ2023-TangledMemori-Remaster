@@ -38,7 +38,6 @@ public class Interaction : MonoBehaviour
         }
         else if (Dialogue != null && interacted != true)
         {
-            dialogmanager.SetScareBool(Jumscare);
             dialogmanager.Start_Dialog(Dialogue);
             //pastikan dialogue tak repeat 
             if (repeatDialoge != true) 
@@ -48,7 +47,6 @@ public class Interaction : MonoBehaviour
         }
         else if (Dialogue != null && interacted == true)
         {
-            dialogmanager.SetScareBool(Jumscare);
             dialogmanager.Start_Dialog(interactedDialogue);
         }
 

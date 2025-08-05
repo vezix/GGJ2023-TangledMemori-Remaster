@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Keypad : MonoBehaviour
 {
+    GameManager gameManager;
     [SerializeField] private TextMeshProUGUI Ans;
     public GameObject Phone;
     public SimpleCharacterController PController;
@@ -22,8 +23,17 @@ public class Keypad : MonoBehaviour
 
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         ExeclaimationMark.SetActive(false);
         interaction = GetComponentInChildren<Interaction>();
+        if (gameManager.stranger != 1)
+        {
+            this.gameObject.GetComponent<Keypad>().enabled = false;
+        }
+        else
+        {
+            this.gameObject.GetComponent<Keypad>().enabled = true;
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -119,6 +129,7 @@ public class Keypad : MonoBehaviour
     {
         Phone.SetActive(false);
         interaction.DialogueStart();
+        gameManager.stranger = 2;
     }
 
 }

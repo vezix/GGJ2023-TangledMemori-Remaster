@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 
 public class Dialog_Manager : MonoBehaviour
@@ -11,9 +12,7 @@ public class Dialog_Manager : MonoBehaviour
     public TextMeshProUGUI DialogueText;
     public SimpleCharacterController PController;
     public Image DialogueImage;
-    //Jumscare
-    public GameObject scare;
-    private bool scareBool=false;
+    public UnityEvent AfterLastDialogue = new UnityEvent();
     public static Dialog_Manager Instance { get; private set; }
 
     public float textSpeed;
@@ -64,6 +63,7 @@ public class Dialog_Manager : MonoBehaviour
     public void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        AfterLastDialogue.AddListener(EndDialogue);
     }
 
     public void HideDialogue()
@@ -174,7 +174,7 @@ public class Dialog_Manager : MonoBehaviour
             }
             else
             {
-                EndDialogue();
+                AfterLastDialogue.Invoke();
             }
         }
     }
@@ -190,24 +190,7 @@ public class Dialog_Manager : MonoBehaviour
         DialogueText.text = "";
         dialog_copy = null;
         conversation = null;
-        if (scareBool == true)
-        {
-            StartCoroutine(JS());
-        }
         PController.enabled = true;
-    }
-
-    public void SetScareBool(bool _Scarebool)
-    {
-        scareBool = _Scarebool;
-    }
-
-    IEnumerator JS()
-    {
-        scare.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1.0f);
-        scare.gameObject.SetActive(false);
-        scareBool = false;
     }
 
 }

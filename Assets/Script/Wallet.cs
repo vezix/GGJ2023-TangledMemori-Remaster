@@ -12,9 +12,13 @@ public class Wallet : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
 
-        if (gameManager.wallet != 0)
+        if (gameManager.stranger != 2)
         {
             this.gameObject.SetActive(false);
+        }
+        else
+        {
+            this.gameObject.SetActive(true);
         }
     }
 
