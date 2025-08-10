@@ -15,6 +15,9 @@ public class Interaction : MonoBehaviour
     public List<Dialogues> interactedDialogue = new List<Dialogues>();
     public bool repeatDialoge = true;
     public bool Jumscare = false;
+    public bool HomeObject = false;
+    public bool OfficeObject = false;
+    public bool StationObject = false;
 
     [SerializeField]
     private bool interacted = false;

@@ -13,7 +13,7 @@ public class NPCInteraction : MonoBehaviour
     public void Start()
     {
         //NOT FINAL, create a script where when you 
-        interaction = GetComponentInChildren<Interaction>();
+        //interaction = GetComponentInChildren<Interaction>();
         ExeclaimationMark.SetActive(false);
     }
 

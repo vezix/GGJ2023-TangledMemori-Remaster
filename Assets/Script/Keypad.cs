@@ -10,6 +10,7 @@ public class Keypad : MonoBehaviour
     GameManager gameManager;
     [SerializeField] private TextMeshProUGUI Ans;
     public GameObject Phone;
+    public GameObject LockedPhone;
     public SimpleCharacterController PController;
     public string scene;
     public GameObject ExeclaimationMark;
@@ -25,14 +26,21 @@ public class Keypad : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         ExeclaimationMark.SetActive(false);
-        interaction = GetComponentInChildren<Interaction>();
-        if (gameManager.stranger != 1)
+        //interaction = GetComponentInChildren<Interaction>();
+        if (gameManager.stranger < 1)
         {
+            this.gameObject.GetComponent<NPCInteraction>().enabled = true;
             this.gameObject.GetComponent<Keypad>().enabled = false;
+        }
+        else if (gameManager.stranger == 1)
+        {
+            this.gameObject.GetComponent<NPCInteraction>().enabled = false;
+            this.gameObject.GetComponent<Keypad>().enabled = true;
         }
         else
         {
-            this.gameObject.GetComponent<Keypad>().enabled = true;
+            this.gameObject.GetComponent<NPCInteraction>().enabled = false;
+            this.gameObject.GetComponent<Keypad>().enabled = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
