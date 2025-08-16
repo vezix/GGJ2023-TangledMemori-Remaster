@@ -14,7 +14,7 @@ public class Wallet : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
 
-        if (gameManager.wife == 2 && gameManager.coworker == 2)
+        if (gameManager.wife == 2 && gameManager.coworker == 2 && gameManager.wallet == 0)
         {
             this.gameObject.SetActive(true);
         }

@@ -120,7 +120,7 @@ public class StrangeNPCInteraction : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         gameManager.stranger = 2;
         SceneManager.LoadScene(scene);
-        Jumscare.gameObject.SetActive(false);
+        //Jumscare.gameObject.SetActive(false);
         this.gameObject.SetActive(false);
     }
 }

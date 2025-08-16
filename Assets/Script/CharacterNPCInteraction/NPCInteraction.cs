@@ -9,7 +9,6 @@ public class NPCInteraction : MonoBehaviour
     private bool insideTrigger;
     public Interaction interaction;
     public GameObject ExeclaimationMark;
-    public bool houseObject;
     GameManager gameManager;
 
     bool FirstTimeInteract = true;
@@ -17,7 +16,7 @@ public class NPCInteraction : MonoBehaviour
     public void Start()
     {
         //NOT FINAL, create a script where when you 
-        //interaction = GetComponentInChildren<Interaction>();
+        interaction = GetComponentInChildren<Interaction>();
         gameManager = FindObjectOfType<GameManager>();
         ExeclaimationMark.SetActive(false);
     }
@@ -52,7 +51,7 @@ public class NPCInteraction : MonoBehaviour
             ExeclaimationMark.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (houseObject == true)
+                if (interaction.HomeObject == true)
                 {
                     if (gameManager.Hobject < 3)
                     {
@@ -60,6 +59,17 @@ public class NPCInteraction : MonoBehaviour
                         {
                             FirstTimeInteract = false;
                             gameManager.Hobject += 1;
+                        }
+                    }
+                }
+                if (interaction.OfficeObject == true)
+                {
+                    if (gameManager.Oobject < 3)
+                    {
+                        if (FirstTimeInteract == true)
+                        {
+                            FirstTimeInteract = false;
+                            gameManager.Oobject += 1;
                         }
                     }
                 }

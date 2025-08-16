@@ -634,7 +634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &390301915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,7 +965,6 @@ MonoBehaviour:
   DialogueObject: {fileID: 1967686683}
   interaction: {fileID: 390301915}
   ExeclaimationMark: {fileID: 1338006007}
-  houseObject: 1
 --- !u!61 &459697021
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1422,6 +1421,8 @@ MonoBehaviour:
   stranger: 0
   wallet: 0
   Hobject: 0
+  Oobject: 0
+  TrainEnter: 0
 --- !u!4 &765539951
 Transform:
   m_ObjectHideFlags: 0
@@ -1470,7 +1471,6 @@ MonoBehaviour:
   DialogueObject: {fileID: 1967686683}
   interaction: {fileID: 523639099}
   ExeclaimationMark: {fileID: 1430364998}
-  houseObject: 1
 --- !u!61 &783244197
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2328,7 +2328,6 @@ MonoBehaviour:
   DialogueObject: {fileID: 1967686683}
   interaction: {fileID: 1711023379}
   ExeclaimationMark: {fileID: 1956107593}
-  houseObject: 1
 --- !u!61 &1113012298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2499,7 +2498,6 @@ MonoBehaviour:
   DialogueObject: {fileID: 1967686683}
   interaction: {fileID: 1781079920}
   ExeclaimationMark: {fileID: 250762934}
-  houseObject: 1
 --- !u!61 &1204761094
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2733,7 +2731,6 @@ MonoBehaviour:
   DialogueObject: {fileID: 1967686683}
   interaction: {fileID: 401733589}
   ExeclaimationMark: {fileID: 1506348815}
-  houseObject: 0
 --- !u!1 &1239057720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,7 +2764,6 @@ MonoBehaviour:
   DialogueObject: {fileID: 1967686683}
   interaction: {fileID: 155675825}
   ExeclaimationMark: {fileID: 1662666319}
-  houseObject: 1
 --- !u!61 &1239057722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2864,8 +2860,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 67997284bc61ec54dbfbb9a4576dbc0e, type: 2}
   - {fileID: 11400000, guid: 2ab841f9114f7a54daceddf719e2de3b, type: 2}
   - {fileID: 11400000, guid: 53aa94c84b894e64c8cedfe6bc45010c, type: 2}
-  interactedDialogue: []
-  repeatDialoge: 1
+  interactedDialogue:
+  - {fileID: 11400000, guid: 53aa94c84b894e64c8cedfe6bc45010c, type: 2}
+  repeatDialoge: 0
   Jumscare: 0
   HomeObject: 0
   OfficeObject: 0

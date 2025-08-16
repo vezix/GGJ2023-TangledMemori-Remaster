@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d03d7362a6bbe0c4896f4179da9d3803, type: 3}
-  m_Name: WifeB03
+  m_Name: CoworkerB04-Repeat
   m_EditorClassIdentifier: 
-  npcName: Linda
-  Image: {fileID: 21300000, guid: 55034aaf73290184eb74ad0e988621fc, type: 3}
+  npcName: Frank
+  Image: {fileID: 21300000, guid: 1558ca25b1bbb77489f547b32df4828a, type: 3}
   npcConvo:
-  - "Well, that\u2019s what wives are for, isn\u2019t it?"
+  - What a jackass....
