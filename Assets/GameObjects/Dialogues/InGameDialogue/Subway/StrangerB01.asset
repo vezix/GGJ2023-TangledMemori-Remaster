@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d03d7362a6bbe0c4896f4179da9d3803, type: 3}
-  m_Name: WifeA11
+  m_Name: StrangerB01
   m_EditorClassIdentifier: 
-  npcName: Linda
-  Image: {fileID: 21300000, guid: 8df7c4006ef73c3449fea3c1f9e6b087, type: 3}
+  npcName: Frank
+  Image: {fileID: 21300000, guid: 7b83ece6f28e9cf4d95cfdb0e96b1112, type: 3}
   npcConvo:
-  - Dinner is already served.
-  - Pork chops, your favorite.
+  - "Hello, I found this wallet on the floor. Is it yours\u2014"

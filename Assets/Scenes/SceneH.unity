@@ -965,6 +965,7 @@ MonoBehaviour:
   DialogueObject: {fileID: 1967686683}
   interaction: {fileID: 390301915}
   ExeclaimationMark: {fileID: 1338006007}
+  houseObject: 1
 --- !u!61 &459697021
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1348,10 +1349,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogmanager: {fileID: 1556413000}
   Dialogue:
-  - {fileID: 11400000, guid: aa3131d5786f45449b9ddca002ba905f, type: 2}
-  - {fileID: 11400000, guid: 4147298cc2254884aa16b82ec822519a, type: 2}
+  - {fileID: 11400000, guid: ccf64f1bfc642af408821f62f7290d33, type: 2}
+  - {fileID: 11400000, guid: 7078d1bd6f5f1fe4787dd6f5578e0ef4, type: 2}
+  - {fileID: 11400000, guid: d812a000652913646b6f29b494ccc646, type: 2}
+  - {fileID: 11400000, guid: 2c38507cff01f3246a379c9984dffae2, type: 2}
+  - {fileID: 11400000, guid: c1e267e458f735c4e9a0301991f5bfdd, type: 2}
+  - {fileID: 11400000, guid: d40968178a6942440900d212e8685fdf, type: 2}
+  - {fileID: 11400000, guid: 39b2c9eaf6c80bc40a3c317a4479d563, type: 2}
+  - {fileID: 11400000, guid: bd506ed7641aca6449cba930235e9b26, type: 2}
+  - {fileID: 11400000, guid: 94d5222f1f309b545ae44c943933b79c, type: 2}
+  - {fileID: 11400000, guid: 59f2ced8fc0883049b8f94286c1e57ea, type: 2}
+  - {fileID: 11400000, guid: d58d486abfdfdc841991dfca8e48a8f8, type: 2}
   interactedDialogue:
-  - {fileID: 11400000, guid: aa3131d5786f45449b9ddca002ba905f, type: 2}
+  - {fileID: 11400000, guid: 88c2a82759579ea42905dc20ba952b52, type: 2}
   repeatDialoge: 0
   Jumscare: 0
   HomeObject: 0
@@ -1411,6 +1421,7 @@ MonoBehaviour:
   coworker: 0
   stranger: 0
   wallet: 0
+  Hobject: 0
 --- !u!4 &765539951
 Transform:
   m_ObjectHideFlags: 0
@@ -1459,6 +1470,7 @@ MonoBehaviour:
   DialogueObject: {fileID: 1967686683}
   interaction: {fileID: 523639099}
   ExeclaimationMark: {fileID: 1430364998}
+  houseObject: 1
 --- !u!61 &783244197
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2316,6 +2328,7 @@ MonoBehaviour:
   DialogueObject: {fileID: 1967686683}
   interaction: {fileID: 1711023379}
   ExeclaimationMark: {fileID: 1956107593}
+  houseObject: 1
 --- !u!61 &1113012298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2486,6 +2499,7 @@ MonoBehaviour:
   DialogueObject: {fileID: 1967686683}
   interaction: {fileID: 1781079920}
   ExeclaimationMark: {fileID: 250762934}
+  houseObject: 1
 --- !u!61 &1204761094
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2719,6 +2733,7 @@ MonoBehaviour:
   DialogueObject: {fileID: 1967686683}
   interaction: {fileID: 401733589}
   ExeclaimationMark: {fileID: 1506348815}
+  houseObject: 0
 --- !u!1 &1239057720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2752,6 +2767,7 @@ MonoBehaviour:
   DialogueObject: {fileID: 1967686683}
   interaction: {fileID: 155675825}
   ExeclaimationMark: {fileID: 1662666319}
+  houseObject: 1
 --- !u!61 &1239057722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2845,8 +2861,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogmanager: {fileID: 1556413000}
   Dialogue:
-  - {fileID: 11400000, guid: 403636357ca38b344817903fd8bcfe75, type: 2}
-  - {fileID: 11400000, guid: b5303a641d1e85849ad9bf5b8560c518, type: 2}
+  - {fileID: 11400000, guid: 67997284bc61ec54dbfbb9a4576dbc0e, type: 2}
+  - {fileID: 11400000, guid: 2ab841f9114f7a54daceddf719e2de3b, type: 2}
+  - {fileID: 11400000, guid: 53aa94c84b894e64c8cedfe6bc45010c, type: 2}
   interactedDialogue: []
   repeatDialoge: 1
   Jumscare: 0
@@ -3324,6 +3341,12 @@ MonoBehaviour:
   DialogueList1: {fileID: 1331661229}
   DialogueObject: {fileID: 1967686683}
   ExeclaimationMark: {fileID: 1054790256}
+  ChildObject:
+  - {fileID: 783244195}
+  - {fileID: 459697019}
+  - {fileID: 1113012296}
+  - {fileID: 1239057720}
+  - {fileID: 1204761092}
   interaction: {fileID: 0}
 --- !u!1 &1556412999
 GameObject:
@@ -7254,8 +7277,8 @@ SceneRoots:
   - {fileID: 1520853944}
   - {fileID: 988965387}
   - {fileID: 1227473933}
-  - {fileID: 459697022}
   - {fileID: 783244198}
+  - {fileID: 459697022}
   - {fileID: 1113012299}
   - {fileID: 1239057723}
   - {fileID: 1204761095}

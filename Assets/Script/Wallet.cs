@@ -7,18 +7,20 @@ public class Wallet : MonoBehaviour
     GameManager gameManager;
     private bool insideTrigger;
     public GameObject ExeclaimationMark;
+    public GameObject DialogueObject;
+    public Interaction interaction;
 
     public void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
 
-        if (gameManager.stranger != 2)
+        if (gameManager.wife == 2 && gameManager.coworker == 2)
         {
-            this.gameObject.SetActive(false);
+            this.gameObject.SetActive(true);
         }
         else
         {
-            this.gameObject.SetActive(true);
+            this.gameObject.SetActive(false);
         }
     }
 
@@ -50,6 +52,7 @@ public class Wallet : MonoBehaviour
             ExeclaimationMark.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                interaction.DialogueStart();
                 gameManager.wallet = 1;
                 ExeclaimationMark.SetActive(false);
                 this.gameObject.SetActive(false);

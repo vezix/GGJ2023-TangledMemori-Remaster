@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d03d7362a6bbe0c4896f4179da9d3803, type: 3}
-  m_Name: WifeA11
+  m_Name: Clock
   m_EditorClassIdentifier: 
-  npcName: Linda
-  Image: {fileID: 21300000, guid: 8df7c4006ef73c3449fea3c1f9e6b087, type: 3}
+  npcName: 
+  Image: {fileID: 0}
   npcConvo:
-  - Dinner is already served.
-  - Pork chops, your favorite.
+  - Everything seems to be falling apart.
+  - Linda obviously hates me, I lost the promotion to Chang
+  - "When everything\u2019s falling apart, riding the train really helps calm my
+    nerves\u2026"

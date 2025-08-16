@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class StrangeNPCInteraction : MonoBehaviour
 {
     public GameObject DialogueList;
     public GameObject DialogueList1;
-    public GameObject DialogueList2;
+    public GameObject DialogueListEnter;
     public GameObject DialogueObject;
     public GameObject ExeclaimationMark;
     public GameObject Jumscare;
+    public string scene;
 
     private bool insideTrigger;
     [SerializeField]
@@ -23,16 +26,21 @@ public class StrangeNPCInteraction : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         interaction = GetComponentInChildren<Interaction>();
         ExeclaimationMark.SetActive(false);
-        if (gameManager.stranger == 3)
+
+        if (gameManager.TrainEnter == 0)
+        {
+            DialogueListEnter.SetActive(true);
+            DialogueList.SetActive(false);
+            DialogueList1.SetActive(false);
+            RefreshInteraction();
+            interaction.DialogueStart();
+            gameManager.TrainEnter = 1;
+
+        }
+
+        if (gameManager.stranger == 2)
         {
             this.gameObject.SetActive(false);
-        }
-        if (gameManager.wife == 1 && gameManager.coworker == 1 && gameManager.wallet == 0 && DialogueList1.activeSelf == false)
-        {
-            DialogueList.SetActive(false);
-            DialogueList1.SetActive(true);
-            DialogueList2.SetActive(false);
-            RefreshInteraction();
         }
     }
 
@@ -75,23 +83,24 @@ public class StrangeNPCInteraction : MonoBehaviour
             ExeclaimationMark.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                interaction.DialogueStart();
-                if (gameManager.wife == 1 && gameManager.coworker == 1 && gameManager.wallet == 0 && gameManager.stranger == 0)
+                if (gameManager.stranger == 0) 
                 {
                     gameManager.stranger = 1;
+                    DialogueListEnter.SetActive(false);
+                    DialogueList1.SetActive(false);
+                    DialogueList.SetActive(true);
+                    RefreshInteraction();
 
                 }
-                if (gameManager.wallet != 0)
+                if (gameManager.wallet == 1 && WalletFirstTime == true)
                 {
+                    DialogueList.SetActive(false);
+                    DialogueList1.SetActive(true);
+                    RefreshInteraction();
                     WalletFirstTime = false;
+                    gameManager.wallet = 2;
                 }
-            }
-            if (gameManager.wife == 1 && gameManager.coworker == 1 &&  gameManager.stranger == 2 && gameManager.wallet == 1 && WalletFirstTime == true && DialogueList2.activeSelf == false)
-            {
-                DialogueList.SetActive(false);
-                DialogueList1.SetActive(false);
-                DialogueList2.SetActive(true);
-                RefreshInteraction();
+                interaction.DialogueStart();
             }
 
         }
@@ -109,7 +118,8 @@ public class StrangeNPCInteraction : MonoBehaviour
     {
         Jumscare.gameObject.SetActive(true);
         yield return new WaitForSeconds(1.0f);
-        gameManager.stranger = 3;
+        gameManager.stranger = 2;
+        SceneManager.LoadScene(scene);
         Jumscare.gameObject.SetActive(false);
         this.gameObject.SetActive(false);
     }

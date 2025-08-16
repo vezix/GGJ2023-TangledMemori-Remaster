@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public int coworker = 0;
     public int stranger = 0;
     public int wallet = 0;
+    public int Hobject = 0;
+    public int TrainEnter = 0;
 
     void Awake()
     {

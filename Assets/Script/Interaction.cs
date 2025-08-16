@@ -55,4 +55,9 @@ public class Interaction : MonoBehaviour
 
     }
 
+    public void SetInteracted(bool interact)
+    {
+        interacted = interact;
+    }
+
 }

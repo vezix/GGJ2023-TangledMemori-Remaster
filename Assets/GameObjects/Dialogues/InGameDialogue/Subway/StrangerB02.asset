@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d03d7362a6bbe0c4896f4179da9d3803, type: 3}
-  m_Name: WifeA11
+  m_Name: StrangerB02
   m_EditorClassIdentifier: 
-  npcName: Linda
-  Image: {fileID: 21300000, guid: 8df7c4006ef73c3449fea3c1f9e6b087, type: 3}
+  npcName: Stranger
+  Image: {fileID: 21300000, guid: 7f8d5572592245a4d8244666d2789577, type: 3}
   npcConvo:
-  - Dinner is already served.
-  - Pork chops, your favorite.
+  - Oh my! Thank you, kind sir. Time and time again, I have been betrayed by friends
+    and family - those closest to me.
