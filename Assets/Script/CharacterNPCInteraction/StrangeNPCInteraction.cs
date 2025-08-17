@@ -37,6 +37,9 @@ public class StrangeNPCInteraction : MonoBehaviour
             gameManager.TrainEnter = 1;
 
         }
+        else
+        {
+        }
 
         if (gameManager.stranger == 2)
         {

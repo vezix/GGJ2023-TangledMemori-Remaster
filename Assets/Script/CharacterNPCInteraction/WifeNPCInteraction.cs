@@ -35,6 +35,13 @@ public class WifeNPCInteraction : MonoBehaviour
         {
             interaction.SetInteracted(true);
         }
+        if (gameManager.wife == 2)
+        {
+            DialogueList.SetActive(false);
+            DialogueList1.SetActive(true);
+            RefreshInteraction();
+            interaction.SetInteracted(true);
+        }
     }
 
     public void RefreshInteraction()

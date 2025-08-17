@@ -34,6 +34,13 @@ public class CoWorkerNPCInteraction : MonoBehaviour
         {
             interaction.SetInteracted(true);
         }
+        if (gameManager.coworker == 2)
+        {
+            DialogueList.SetActive(false);
+            DialogueList1.SetActive(true);
+            RefreshInteraction();
+            interaction.SetInteracted(true);
+        }
     }
 
     public void RefreshInteraction()
