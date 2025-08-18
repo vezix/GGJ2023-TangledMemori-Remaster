@@ -11,6 +11,8 @@ public class NPCInteraction : MonoBehaviour
     public GameObject ExeclaimationMark;
     GameManager gameManager;
 
+    public bool DeactiveAfterDone=false;
+
     bool FirstTimeInteract = true;
 
     public void Start()
@@ -73,12 +75,21 @@ public class NPCInteraction : MonoBehaviour
                         }
                     }
                 }
+                if (DeactiveAfterDone == true)
+                {
+                    interaction.dialogmanager.AfterLastDialogue.AddListener(CloseTheDamnUI);
+                }
                 interaction.DialogueStart();
             }
         }
         else
             ExeclaimationMark.SetActive(false);
 
+    }
+
+    void CloseTheDamnUI()
+    {
+        this.gameObject.GetComponent<NPCInteraction>().enabled = false;
     }
 
 }

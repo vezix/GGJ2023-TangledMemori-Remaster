@@ -47,14 +47,14 @@ public class Dialog_Manager : MonoBehaviour
     private void Awake()
     {
         // Singleton pattern to ensure only one instance of DialogueManager
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        //if (Instance == null)
+        //{
+        //    Instance = this;
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
 
         // Initially hide the dialogue UI
         HideDialogue();
@@ -182,14 +182,14 @@ public class Dialog_Manager : MonoBehaviour
     private void EndDialogue()
     {
         begun = false;
+        DialogueObject.SetActive(false);
+        dialog_copy = null;
+        conversation = null;
+        DialogueText.text = "";
         ListIndex = 0;
         dialogueIndex = 0;
         currDialogueIndex = 0;
         currListIndex = 0;
-        DialogueObject.SetActive(false);
-        DialogueText.text = "";
-        dialog_copy = null;
-        conversation = null;
         PController.enabled = true;
     }
 

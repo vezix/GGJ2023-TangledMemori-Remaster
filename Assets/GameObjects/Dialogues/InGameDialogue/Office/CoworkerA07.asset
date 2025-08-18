@@ -15,5 +15,5 @@ MonoBehaviour:
   npcName: Chang
   Image: {fileID: 21300000, guid: 0b8397922ce5f4b42bc3d01e6f6db7bc, type: 3}
   npcConvo:
-  - "Ah nothin, just no offense, but I\u2019m definitely gonna get the promotion.
-    No hard feelings right?"
+  - "Ah nothin, it just I\u2019m definitely gonna get the promotion. No hard feelings
+    right?"

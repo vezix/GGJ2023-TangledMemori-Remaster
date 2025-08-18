@@ -1508,6 +1508,7 @@ MonoBehaviour:
   DialogueObject: {fileID: 176722032}
   interaction: {fileID: 936789566}
   ExeclaimationMark: {fileID: 148613798}
+  DeactiveAfterDone: 0
 --- !u!61 &879463587
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1708,6 +1709,7 @@ MonoBehaviour:
   DialogueObject: {fileID: 176722032}
   interaction: {fileID: 1142359192}
   ExeclaimationMark: {fileID: 408669667}
+  DeactiveAfterDone: 0
 --- !u!61 &1000729622
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2052,6 +2054,7 @@ MonoBehaviour:
   DialogueObject: {fileID: 176722032}
   interaction: {fileID: 685805878}
   ExeclaimationMark: {fileID: 1864942237}
+  DeactiveAfterDone: 1
 --- !u!1 &1122793912
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,7 +2129,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6, y: -0.02196002}
+  m_Offset: {x: 0.75, y: -0.02196002}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}

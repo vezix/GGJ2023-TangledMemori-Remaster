@@ -13,6 +13,7 @@ public class StrangeNPCInteraction : MonoBehaviour
     public GameObject DialogueObject;
     public GameObject ExeclaimationMark;
     public GameObject Jumscare;
+    public GameObject ClockInteraction;
     public string scene;
 
     private bool insideTrigger;
@@ -35,14 +36,17 @@ public class StrangeNPCInteraction : MonoBehaviour
             RefreshInteraction();
             interaction.DialogueStart();
             gameManager.TrainEnter = 1;
+            ClockInteraction.SetActive(false);
 
         }
-        else
+        else if (gameManager.wife > 0 && gameManager.coworker > 0 && gameManager.TrainEnter > 0)
         {
+            ClockInteraction.SetActive(true);
         }
 
         if (gameManager.stranger == 2)
         {
+            ClockInteraction.SetActive(false);
             this.gameObject.SetActive(false);
         }
     }

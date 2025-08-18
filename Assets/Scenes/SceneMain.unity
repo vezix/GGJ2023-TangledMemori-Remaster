@@ -2247,6 +2247,9 @@ MonoBehaviour:
   coworker: 0
   stranger: 0
   wallet: 0
+  Hobject: 0
+  Oobject: 0
+  TrainEnter: 0
 --- !u!4 &2057775236
 Transform:
   m_ObjectHideFlags: 0

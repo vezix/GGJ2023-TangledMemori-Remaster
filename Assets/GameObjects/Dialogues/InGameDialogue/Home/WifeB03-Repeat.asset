@@ -15,4 +15,4 @@ MonoBehaviour:
   npcName: Linda
   Image: {fileID: 21300000, guid: 55034aaf73290184eb74ad0e988621fc, type: 3}
   npcConvo:
-  - "Well, that\u2019s what wives are for, isn\u2019t it?"
+  - "Well, that\u2019s what wives are for, aren't they?"

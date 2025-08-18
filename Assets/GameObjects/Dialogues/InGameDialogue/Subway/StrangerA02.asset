@@ -15,4 +15,4 @@ MonoBehaviour:
   npcName: Frank
   Image: {fileID: 21300000, guid: a071b7a60e7c7184690d92917886c937, type: 3}
   npcConvo:
-  - "Ugh\u2026 Better stay away from this guy. Looks like a total creep."
+  - "Ugh\u2026 Better stay away from this guy. He gives me the creeps"

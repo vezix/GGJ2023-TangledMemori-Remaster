@@ -27,12 +27,12 @@ public class Keypad : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         ExeclaimationMark.SetActive(false);
         //interaction = GetComponentInChildren<Interaction>();
-        if (gameManager.stranger < 1)
+        if (gameManager.coworker < 3)
         {
             this.gameObject.GetComponent<NPCInteraction>().enabled = true;
             this.gameObject.GetComponent<Keypad>().enabled = false;
         }
-        else if (gameManager.stranger == 1)
+        else if (gameManager.coworker == 3)
         {
             this.gameObject.GetComponent<NPCInteraction>().enabled = false;
             this.gameObject.GetComponent<Keypad>().enabled = true;
@@ -137,7 +137,7 @@ public class Keypad : MonoBehaviour
     {
         Phone.SetActive(false);
         interaction.DialogueStart();
-        gameManager.stranger = 2;
+        gameManager.stranger = 3;
     }
 
 }
