@@ -23,7 +23,7 @@ public class CoWorkerNPCInteraction : MonoBehaviour
         interaction = GetComponentInChildren<Interaction>();
         ExeclaimationMark.SetActive(false);
 
-        if (gameManager.coworker < 1)
+        if (gameManager.coworker < 1 )
         {
             foreach (GameObject obj in ChildObject)
             {
@@ -41,6 +41,15 @@ public class CoWorkerNPCInteraction : MonoBehaviour
             RefreshInteraction();
             interaction.SetInteracted(true);
         }
+        if (gameManager.stranger >= 3)
+        {
+            foreach (GameObject obj in ChildObject)
+            {
+                obj.GetComponent<BoxCollider2D>().enabled = false;
+            }
+                this.gameObject.SetActive(false);
+        }
+
     }
 
     public void RefreshInteraction()
