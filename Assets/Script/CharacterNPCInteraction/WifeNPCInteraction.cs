@@ -8,6 +8,7 @@ public class WifeNPCInteraction : MonoBehaviour
     public GameObject DialogueList1;
     public GameObject DialogueObject;
     public GameObject ExeclaimationMark;
+    public GameObject Blocker;
 
     public GameObject[] ChildObject; 
 
@@ -41,6 +42,18 @@ public class WifeNPCInteraction : MonoBehaviour
             DialogueList1.SetActive(true);
             RefreshInteraction();
             interaction.SetInteracted(true);
+        }
+        if (gameManager.coworker == 3)
+        {
+            Blocker.SetActive(true);
+        }
+        if (gameManager.wife == 3)
+        {
+            foreach (GameObject obj in ChildObject)
+            {
+                obj.GetComponent<BoxCollider2D>().enabled = false;
+            }
+            this.gameObject.SetActive(false);
         }
     }
 

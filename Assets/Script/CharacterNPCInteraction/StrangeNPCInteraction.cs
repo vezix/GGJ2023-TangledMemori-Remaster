@@ -44,7 +44,7 @@ public class StrangeNPCInteraction : MonoBehaviour
             ClockInteraction.SetActive(true);
         }
 
-        if (gameManager.stranger == 2)
+        if (gameManager.stranger >= 2)
         {
             ClockInteraction.SetActive(false);
             this.gameObject.SetActive(false);

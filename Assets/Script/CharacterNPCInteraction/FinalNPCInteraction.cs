@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinalNPCInteraction : MonoBehaviour
 {
@@ -9,10 +10,11 @@ public class FinalNPCInteraction : MonoBehaviour
 
 
     private bool insideTrigger;
-    bool firstTime = true;
     public Interaction interaction;
     GameManager gameManager;
 
+    public string scene;
+    public GameObject Jumscare;
     public void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -47,11 +49,24 @@ public class FinalNPCInteraction : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 interaction.DialogueStart();
-                firstTime = false;
+                interaction.dialogmanager.AfterLastDialogue.AddListener(StartJS);
             }
         }
         else
             ExeclaimationMark.SetActive(false);
+    }
 
+    void StartJS()
+    {
+        StartCoroutine(JS());
+    }
+
+    IEnumerator JS()
+    {
+        Jumscare.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        this.gameObject.SetActive(false);
+        //SceneManager.LoadScene(scene);
+        //Jumscare.gameObject.SetActive(false);
     }
 }

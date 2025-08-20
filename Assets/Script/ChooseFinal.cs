@@ -55,7 +55,7 @@ public class ChooseFinal : MonoBehaviour
 
     private void Update()
     {
-        if ((gameManager.wife == 1) && (gameManager.coworker == 1) && (gameManager.stranger == 3))
+        if ((gameManager.wife == 3) && (gameManager.coworker == 3) && (gameManager.stranger == 3))
         {
             ButtonL.sprite = Final1;
             ButtonC.sprite = Final2;

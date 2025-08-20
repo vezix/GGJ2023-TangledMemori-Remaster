@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d03d7362a6bbe0c4896f4179da9d3803, type: 3}
-  m_Name: PhListA-2
+  m_Name: Phone01
   m_EditorClassIdentifier: 
-  npcName: Frank
-  Image: {fileID: 21300000, guid: 7b83ece6f28e9cf4d95cfdb0e96b1112, type: 3}
+  npcName: Linda
+  Image: {fileID: 21300000, guid: 55034aaf73290184eb74ad0e988621fc, type: 3}
   npcConvo:
-  - What in the actual FUCK did i just read.
+  - "I\u2019m so sick of my life\u2026 I want it to change and drop all the deadweight\u2026 "

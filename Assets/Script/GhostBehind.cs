@@ -28,7 +28,9 @@ public class GhostBehind : MonoBehaviour
             if (gameManager.stranger == 2)
             {
                 this.gameObject.SetActive(true);
-            }else
+                StartCoroutine("JS");
+            }
+            else
             {
                 this.gameObject.SetActive(false);
             }
@@ -62,29 +64,29 @@ public class GhostBehind : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (office == true)
-        {
-            StartCoroutine("JS");
-            if (ChangJS == true)
-            {
-                StartCoroutine("JS1");
-            }
-        }
 
     }
 
     IEnumerator JS()
     {
-        ghost.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        ghost.SetActive(false);
+        while (office == true)
+        {
+            ghost.SetActive(true);
+            yield return new WaitForSeconds(Random.Range(0.05f, 0.01f));
+            ghost.SetActive(false);
+            yield return new WaitForSeconds(Random.Range(0.05f, 0.01f));
+        }
     }
 
     IEnumerator JS1()
     {
-        Chang.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        Chang.SetActive(false);
+        while (ChangJS == true)
+        {
+            Chang.SetActive(true);
+            yield return new WaitForSeconds(Random.Range(0.05f, 0.01f));
+            Chang.SetActive(false);
+            yield return new WaitForSeconds(Random.Range(0.05f, 0.01f));
+        }
     }
 
     void ghost1()
@@ -94,10 +96,11 @@ public class GhostBehind : MonoBehaviour
     IEnumerator InvisibleGap()
     {
         interaction.dialogmanager.AfterLastDialogue.RemoveListener(ghost1);
+        StartCoroutine("JS1");
         yield return new WaitForSeconds(3f);
-        ChangJS = false;
-        Chang.SetActive(false);
+        ChangJS=false;
         interaction1.DialogueStart();
+        Chang.SetActive(false);
         yield return new WaitForSeconds(1f);
         Note.SetActive(true);
         portal.SetActive(true);

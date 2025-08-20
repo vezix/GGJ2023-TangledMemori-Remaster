@@ -21,6 +21,15 @@ public class Keypad : MonoBehaviour
     public GameObject DialogueObject;
     public Interaction interaction;
 
+    public GameObject ghost;
+    bool ghostjs=false;
+
+    public GameObject wife;
+    bool wifejs = false;
+
+    public GameObject portal;
+
+    public GameObject[] ChildObject;
 
     private void Start()
     {
@@ -34,14 +43,28 @@ public class Keypad : MonoBehaviour
         }
         else if (gameManager.coworker == 3)
         {
-            this.gameObject.GetComponent<NPCInteraction>().enabled = false;
-            this.gameObject.GetComponent<Keypad>().enabled = true;
+
+            if (gameManager.wife == 3)
+            {
+                this.gameObject.GetComponent<NPCInteraction>().enabled = false;
+                this.gameObject.GetComponent<Keypad>().enabled = false;
+            }
+            else
+            {
+                this.gameObject.GetComponent<NPCInteraction>().enabled = false;
+                this.gameObject.GetComponent<Keypad>().enabled = true;
+                ghost.SetActive(true);
+                ghostjs = true;
+                StartCoroutine("JS");
+            }
         }
         else
         {
             this.gameObject.GetComponent<NPCInteraction>().enabled = false;
             this.gameObject.GetComponent<Keypad>().enabled = false;
         }
+
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -67,6 +90,7 @@ public class Keypad : MonoBehaviour
 
     private void Update()
     {
+
         if (insideTrigger == true && (!Phone.activeSelf) && (!DialogueObject.activeSelf))
         {
             ExeclaimationMark.SetActive(true);
@@ -107,8 +131,8 @@ public class Keypad : MonoBehaviour
             Ans.text = "Correct";
             StartCoroutine("OneS");
             StartDialogue();
+            interaction.dialogmanager.AfterLastDialogue.AddListener(DialogueJS);
             this.gameObject.GetComponent<Keypad>().enabled = false;
-            //SceneManager.LoadScene(scene);
         }
         else
         {
@@ -137,7 +161,49 @@ public class Keypad : MonoBehaviour
     {
         Phone.SetActive(false);
         interaction.DialogueStart();
-        gameManager.stranger = 3;
+        gameManager.wife = 3;
     }
 
+    void DialogueJS()
+    {
+        interaction.dialogmanager.AfterLastDialogue.RemoveListener(DialogueJS);
+        portal.SetActive(false);
+        foreach (GameObject obj in ChildObject)
+        {
+            obj.GetComponent<BoxCollider2D>().enabled = false;
+        }
+        StartCoroutine("JS2");
+    }
+
+    IEnumerator JS()
+    {
+        while (ghostjs == true)
+        {
+            ghost.SetActive(true);
+            yield return new WaitForSeconds(Random.Range(0.05f, 0.01f));
+            ghost.SetActive(false);
+            yield return new WaitForSeconds(Random.Range(0.05f, 0.01f));
+        }
+    }
+    IEnumerator JS1()
+    {
+        while (wifejs == true)
+        {
+            wife.SetActive(true);
+            yield return new WaitForSeconds(Random.Range(0.05f, 0.01f));
+            wife.SetActive(false);
+            yield return new WaitForSeconds(Random.Range(0.05f, 0.01f));
+        }
+    }
+
+    IEnumerator JS2()
+    {
+        wifejs = true;
+        StartCoroutine("JS1");
+        yield return new WaitForSeconds(3f);
+        wifejs = false;
+        ghostjs = false;
+        //portal.SetActive(true);
+        SceneManager.LoadScene(scene);
+    }
 }
