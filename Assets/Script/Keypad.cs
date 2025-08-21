@@ -28,6 +28,7 @@ public class Keypad : MonoBehaviour
     bool wifejs = false;
 
     public GameObject portal;
+    public GameObject Blackscreen;
 
     public GameObject[] ChildObject;
 
@@ -203,6 +204,8 @@ public class Keypad : MonoBehaviour
         yield return new WaitForSeconds(3f);
         wifejs = false;
         ghostjs = false;
+        Blackscreen.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         //portal.SetActive(true);
         SceneManager.LoadScene(scene);
     }

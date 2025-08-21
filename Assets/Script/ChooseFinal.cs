@@ -10,6 +10,7 @@ public class ChooseFinal : MonoBehaviour
 {
     private bool insideTrigger = false;
     public string scene;
+    public string sceneWrong;
     public GameObject TextObject;
     public TextMeshProUGUI Textbox;
     public SimpleCharacterController PController;
@@ -24,6 +25,9 @@ public class ChooseFinal : MonoBehaviour
     public Image ButtonR;
 
     public GameObject ButtonBlocker;
+
+    public GameObject whitescreen;
+    public GameObject blackscreen;
 
     private bool FinalSelection = false;
 
@@ -108,18 +112,29 @@ public class ChooseFinal : MonoBehaviour
     IEnumerator Wrong()
     {
         ButtonBlocker.SetActive(true);
-        Textbox.text = "Try Again";
+        Textbox.text = "You Choose Wrong";
         yield return new WaitForSeconds(1.0f);
-        Textbox.text = "Who do you think murdered you?";
-        ButtonBlocker.SetActive(false);
+        blackscreen.SetActive(true);
+        this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        TextObject.SetActive(false);
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene(sceneWrong);
+        //Textbox.text = "Who do you think murdered you?";
+        //ButtonBlocker.SetActive(false);
     }
 
     IEnumerator Right()
     {
         ButtonBlocker.SetActive(true);
         Textbox.text = "You Choose Right";
+        yield return new WaitForSeconds(1.0f);
+        whitescreen.SetActive(true);
+        this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        TextObject.SetActive(false);
         yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene(scene);
-        ButtonBlocker.SetActive(false);
+        //ButtonBlocker.SetActive(false);
     }
+
+
 }
