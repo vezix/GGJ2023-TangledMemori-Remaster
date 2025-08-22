@@ -11,14 +11,14 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject); // Makes this GameObject persist across scenes
+        }
         else
         {
-            Destroy(gameObject);
-            return;
+            Destroy(gameObject); // Prevents duplicate GameManager instances
         }
-
-        DontDestroyOnLoad(gameObject);
 
         foreach (Sound s in soundBG)
         {

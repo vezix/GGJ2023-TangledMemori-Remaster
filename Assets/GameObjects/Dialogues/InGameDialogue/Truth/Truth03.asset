@@ -15,5 +15,5 @@ MonoBehaviour:
   npcName: Stranger
   Image: {fileID: 21300000, guid: 2f19676d9324e274692310f56b4c2a98, type: 3}
   npcConvo:
-  - 'There is only two types of people, the betrayed, and the betrayer. '
+  - 'There are only two types of people, the betrayed, and the betrayer. '
   - Are you happy with the truth?

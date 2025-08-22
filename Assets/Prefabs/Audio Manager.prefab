@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6451449523415004303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8002555921548582054}
+  - component: {fileID: 1095430256099080870}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8002555921548582054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451449523415004303}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5263216, y: -0.40838724, z: -0.10186337}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1095430256099080870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451449523415004303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3e449e0594caa4e8cd0b3bfabdfe67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundBG:
+  - group: {fileID: 24300002, guid: 00efe03aa18900a4da50d9338e909331, type: 2}
+    name: MainMenu
+    clip: {fileID: 8300000, guid: 8f628e918ebceff40b69fad718573d62, type: 3}
+    volume: 0.885
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - group: {fileID: 0}
+    name: Home
+    clip: {fileID: 8300000, guid: ecdf2b42edc78b1449ccc9cadcedffa8, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - group: {fileID: 0}
+    name: HomeHaunted
+    clip: {fileID: 8300000, guid: 657459a994669b548a0703a4932d5c2a, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - group: {fileID: 0}
+    name: Office
+    clip: {fileID: 8300000, guid: 7636150d89f60f44a8233c292a428bb3, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - group: {fileID: 0}
+    name: OfficeHaunted
+    clip: {fileID: 8300000, guid: cb3b2bc763198b44c9072400d3262a14, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - group: {fileID: 0}
+    name: Train
+    clip: {fileID: 8300000, guid: d899411bc53261a4ea947f14626a02c2, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - group: {fileID: 0}
+    name: TrainHaunted
+    clip: {fileID: 8300000, guid: cb3b2bc763198b44c9072400d3262a14, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - group: {fileID: 0}
+    name: TreeRoom
+    clip: {fileID: 8300000, guid: 7ee7a81345afc014d8cf402e3ef74275, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  soundSFX:
+  - group: {fileID: 0}
+    name: Clock
+    clip: {fileID: 8300000, guid: 3c505cd412203354d92094ec21a72573, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - group: {fileID: 0}
+    name: Scare
+    clip: {fileID: 8300000, guid: ca5b5a8c290429849965fe8188ffeb19, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - group: {fileID: 0}
+    name: Door
+    clip: {fileID: 8300000, guid: 700f92f70b7a2a642abb4ea0885d3b90, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - group: {fileID: 0}
+    name: Grass
+    clip: {fileID: 8300000, guid: 7c7c07d3842e43e40a448438da2db0d7, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
