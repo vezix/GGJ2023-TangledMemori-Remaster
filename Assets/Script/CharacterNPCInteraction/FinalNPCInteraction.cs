@@ -15,6 +15,7 @@ public class FinalNPCInteraction : MonoBehaviour
 
     public string scene;
     public GameObject Jumscare;
+    public GameObject GameLogo;
     public void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -64,9 +65,12 @@ public class FinalNPCInteraction : MonoBehaviour
     IEnumerator JS()
     {
         Jumscare.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        Jumscare.gameObject.SetActive(false);
+        GameLogo.gameObject.SetActive(true);
         yield return new WaitForSeconds(1.0f);
         this.gameObject.SetActive(false);
-        //SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(scene);
         //Jumscare.gameObject.SetActive(false);
     }
 }

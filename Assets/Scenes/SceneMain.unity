@@ -2371,7 +2371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: SceneTruth
-  sceneWrong: TitleScreen
+  sceneWrong: Splash
   TextObject: {fileID: 2102095866459729461}
   Textbox: {fileID: 2102095866463507403}
   PController: {fileID: 1455559583}

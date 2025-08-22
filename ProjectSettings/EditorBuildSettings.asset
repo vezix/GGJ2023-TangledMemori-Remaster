@@ -6,11 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SceneH.unity
-    guid: a850486c77d48fc44924d79afad6a79a
+    path: Assets/Scenes/Splash.unity
+    guid: be773f9aa73a4ad4bb0db4570dd147f0
+  - enabled: 1
+    path: Assets/Scenes/TItleScreen.unity
+    guid: c54b3c61ce0f3bc44bac89034d51070c
   - enabled: 1
     path: Assets/Scenes/SceneMain.unity
     guid: b0593307b3a123346b1bfff7d459b93d
+  - enabled: 1
+    path: Assets/Scenes/SceneTuto.unity
+    guid: 329527f2816c6c6489b9527f4194a82b
+  - enabled: 1
+    path: Assets/Scenes/SceneH.unity
+    guid: a850486c77d48fc44924d79afad6a79a
   - enabled: 1
     path: Assets/Scenes/SceneO.unity
     guid: 8b83d6d1e9c8631488c1b04a66a0c17c
@@ -18,9 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneT.unity
     guid: 524911574c951cf4598f0bec2ef3161c
   - enabled: 1
-    path: Assets/Scenes/SceneTuto.unity
-    guid: 329527f2816c6c6489b9527f4194a82b
-  - enabled: 1
     path: Assets/Scenes/SceneTruth.unity
     guid: 0665c6b8539498644b905167306cf677
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 73c6727a6feef8e4b82604d45b15c98d
   m_configObjects: {}

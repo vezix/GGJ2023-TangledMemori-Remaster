@@ -113,11 +113,11 @@ public class ChooseFinal : MonoBehaviour
     {
         ButtonBlocker.SetActive(true);
         Textbox.text = "You Choose Wrong";
-        yield return new WaitForSeconds(1.0f);
-        blackscreen.SetActive(true);
-        this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        TextObject.SetActive(false);
         yield return new WaitForSeconds(3.0f);
+        //blackscreen.SetActive(true);
+        //this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        //TextObject.SetActive(false);
+        //yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene(sceneWrong);
         //Textbox.text = "Who do you think murdered you?";
         //ButtonBlocker.SetActive(false);
