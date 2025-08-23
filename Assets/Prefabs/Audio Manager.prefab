@@ -52,49 +52,49 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 1
-  - group: {fileID: 0}
+  - group: {fileID: 24300002, guid: 00efe03aa18900a4da50d9338e909331, type: 2}
     name: Home
     clip: {fileID: 8300000, guid: ecdf2b42edc78b1449ccc9cadcedffa8, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 1
-  - group: {fileID: 0}
+  - group: {fileID: 24300002, guid: 00efe03aa18900a4da50d9338e909331, type: 2}
     name: HomeHaunted
     clip: {fileID: 8300000, guid: 657459a994669b548a0703a4932d5c2a, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 1
-  - group: {fileID: 0}
+  - group: {fileID: 24300002, guid: 00efe03aa18900a4da50d9338e909331, type: 2}
     name: Office
     clip: {fileID: 8300000, guid: 7636150d89f60f44a8233c292a428bb3, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 1
-  - group: {fileID: 0}
+  - group: {fileID: 24300002, guid: 00efe03aa18900a4da50d9338e909331, type: 2}
     name: OfficeHaunted
     clip: {fileID: 8300000, guid: cb3b2bc763198b44c9072400d3262a14, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 1
-  - group: {fileID: 0}
+  - group: {fileID: 24300002, guid: 00efe03aa18900a4da50d9338e909331, type: 2}
     name: Train
     clip: {fileID: 8300000, guid: d899411bc53261a4ea947f14626a02c2, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 1
-  - group: {fileID: 0}
+  - group: {fileID: 24300002, guid: 00efe03aa18900a4da50d9338e909331, type: 2}
     name: TrainHaunted
-    clip: {fileID: 8300000, guid: cb3b2bc763198b44c9072400d3262a14, type: 3}
+    clip: {fileID: 8300000, guid: 393b503b46c430c4cad0b78d3313cd73, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 1
-  - group: {fileID: 0}
+  - group: {fileID: 24300002, guid: 00efe03aa18900a4da50d9338e909331, type: 2}
     name: TreeRoom
     clip: {fileID: 8300000, guid: 7ee7a81345afc014d8cf402e3ef74275, type: 3}
     volume: 1

@@ -16,6 +16,8 @@ public class FinalNPCInteraction : MonoBehaviour
     public string scene;
     public GameObject Jumscare;
     public GameObject GameLogo;
+    public string JSsfx;
+    public string ClockSFX;
     public void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -65,9 +67,13 @@ public class FinalNPCInteraction : MonoBehaviour
     IEnumerator JS()
     {
         Jumscare.gameObject.SetActive(true);
+        FindObjectOfType<AudioManager>().stopAllBG();
+        FindObjectOfType<AudioManager>().PlaySFX(JSsfx);
         yield return new WaitForSeconds(3.0f);
         Jumscare.gameObject.SetActive(false);
         GameLogo.gameObject.SetActive(true);
+        FindObjectOfType<AudioManager>().stopAllBG();
+        FindObjectOfType<AudioManager>().PlaySFX(ClockSFX);
         yield return new WaitForSeconds(1.0f);
         this.gameObject.SetActive(false);
         SceneManager.LoadScene(scene);

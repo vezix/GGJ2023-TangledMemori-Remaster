@@ -1233,6 +1233,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1072240484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &679934044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 679934046}
+  - component: {fileID: 679934045}
+  m_Layer: 0
+  m_Name: AudioPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &679934045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679934044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26769cbd353307d49b34433e04ba14aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGSong: Office
+  BGSong1: OfficeHaunted
+  TreeRoom: 0
+  Home: 0
+  Office: 1
+  Train: 0
+  basic: 0
+--- !u!4 &679934046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679934044}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.404519, y: -0.6012683, z: -0.1818104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &685805877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,6 +1799,7 @@ MonoBehaviour:
   Hobject: 0
   Oobject: 0
   TrainEnter: 0
+  tuto: 0
 --- !u!1 &968833777
 GameObject:
   m_ObjectHideFlags: 0
@@ -3894,3 +3946,4 @@ SceneRoots:
   - {fileID: 879463588}
   - {fileID: 968833780}
   - {fileID: 827904861}
+  - {fileID: 679934046}

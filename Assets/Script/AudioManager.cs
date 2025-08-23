@@ -67,8 +67,11 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        else Debug.Log("Sound: " + name + " is Playing!");
-        s.source.Play();
+        else
+        {
+            Debug.Log("Sound: " + name + " is Playing!");
+            s.source.Play();
+        }
     }
     public void StopBG(string name)
     {
@@ -78,8 +81,11 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        else Debug.Log("Sound: " + name + " is Stopped!");
-        s.source.Stop();
+        else
+        {
+            Debug.Log("Sound: " + name + " is Stopped!");
+            s.source.Stop();
+        }
     }
 
     public void PlaySFX(string name)
@@ -90,8 +96,11 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        else Debug.Log("Sound: " + name + " is Playing!");
-        s.source.Play();
+        else
+        {
+            Debug.Log("Sound: " + name + " is Playing!");
+            s.source.Play();
+        }    
     }
 
 }

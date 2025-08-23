@@ -253,6 +253,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &313775106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 313775108}
+  - component: {fileID: 313775107}
+  m_Layer: 0
+  m_Name: AudioPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &313775107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313775106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26769cbd353307d49b34433e04ba14aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGSong: TrainHaunted
+  BGSong1: 
+  TreeRoom: 1
+  Home: 0
+  Office: 0
+  Train: 0
+  basic: 0
+--- !u!4 &313775108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313775106}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.404519, y: -0.6012683, z: -0.1818104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &321272874
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +340,7 @@ MonoBehaviour:
   Hobject: 0
   Oobject: 0
   TrainEnter: 0
+  tuto: 0
 --- !u!4 &321272876
 Transform:
   m_ObjectHideFlags: 0
@@ -1317,6 +1369,8 @@ MonoBehaviour:
   scene: Credits
   Jumscare: {fileID: 2120938342}
   GameLogo: {fileID: 1213380255}
+  JSsfx: Scare
+  ClockSFX: Clock
 --- !u!1 &1527887327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,3 +2424,4 @@ SceneRoots:
   - {fileID: 2132454119}
   - {fileID: 2120938344}
   - {fileID: 1213380257}
+  - {fileID: 313775108}

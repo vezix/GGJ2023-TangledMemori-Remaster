@@ -242,7 +242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000011444, y: -499}
+  m_AnchoredPosition: {x: -0.000011444, y: -512}
   m_SizeDelta: {x: 520.7407, y: 551.7919}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &87738664
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_text: "Original (2023) Credits :\nGame Designer & Programmer : Choh Kai Jun\nGame
     Designer & Artist : Jimmy Chen\nGame Designer & Sound : Brandon\nGame Programmer
     : Amirul Haikal \nGame Artist : Rui Jie Hou\nGame Artist : Charles Wong Chun
-    Yaw\nGame Artist : FahmiRamli\nHelper : Ng Cher Whei\n\nRemaster (2025) Credits
+    Yaw\nGame Artist : Fahmi Ramli\nHelper : Ng Cher Whei\n\nRemaster (2025) Credits
     :\nMain Programmer, Additional Art & Design: \nAmirul Haikal\n\nSpecial thanks:
     \nTeam Revival \nGGJ 2023\nand\nYou for playing this game\n"
   m_isRightToLeft: 0
@@ -643,6 +643,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1283858548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1283858550}
+  - component: {fileID: 1283858549}
+  m_Layer: 0
+  m_Name: AudioPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1283858549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283858548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26769cbd353307d49b34433e04ba14aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BGSong: Home
+  BGSong1: 
+  TreeRoom: 0
+  Home: 0
+  Office: 0
+  Train: 0
+  basic: 1
+--- !u!4 &1283858550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283858548}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.404519, y: -0.6012683, z: -0.1818104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -651,3 +702,4 @@ SceneRoots:
   - {fileID: 85527729}
   - {fileID: 928524019}
   - {fileID: 1233164118}
+  - {fileID: 1283858550}

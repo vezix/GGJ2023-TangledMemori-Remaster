@@ -67,6 +67,7 @@ public class ChooseFinal : MonoBehaviour
 
             if (FinalSelection == false)
             {
+                //FindObjectOfType<AudioManager>().PlaySFX("Grass");
                 FinalSelection = true;
                 ButtonBlocker.SetActive(false);
                 Textbox.text = "Who killed you?";
@@ -79,6 +80,7 @@ public class ChooseFinal : MonoBehaviour
             ExeclaimationMark.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                //FindObjectOfType<AudioManager>().PlaySFX("Grass");
                 TextObject.SetActive(true);
                 PController.enabled = false;
             }
@@ -112,7 +114,7 @@ public class ChooseFinal : MonoBehaviour
     IEnumerator Wrong()
     {
         ButtonBlocker.SetActive(true);
-        Textbox.text = "You Choose Wrong";
+        Textbox.text = "You Are Wrong";
         yield return new WaitForSeconds(3.0f);
         //blackscreen.SetActive(true);
         //this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -126,7 +128,7 @@ public class ChooseFinal : MonoBehaviour
     IEnumerator Right()
     {
         ButtonBlocker.SetActive(true);
-        Textbox.text = "You Choose Right";
+        Textbox.text = "You Are Correct";
         yield return new WaitForSeconds(1.0f);
         whitescreen.SetActive(true);
         this.gameObject.GetComponent<BoxCollider2D>().enabled = false;

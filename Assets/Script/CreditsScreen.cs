@@ -13,6 +13,6 @@ public class CreditsScreen : MonoBehaviour
     IEnumerator ProceedToMenu()
     {
         yield return new WaitForSeconds(22);
-        SceneManager.LoadScene("Splash");
+        SceneManager.LoadScene("TitleScreen");
     }
 }

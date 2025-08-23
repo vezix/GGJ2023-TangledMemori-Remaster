@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
         gameManager.Hobject = 0;
         gameManager.Oobject = 0;
         gameManager.TrainEnter = 0;
+        gameManager.tuto = 0;
     }
 
     // Update is called once per frame

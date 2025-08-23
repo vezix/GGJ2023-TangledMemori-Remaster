@@ -24,6 +24,7 @@ public class WifeNPCInteraction : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         interaction = GetComponentInChildren<Interaction>();
         ExeclaimationMark.SetActive(false);
+     
 
         if (gameManager.wife < 1)
         {

@@ -23,6 +23,7 @@ public class CoWorkerNPCInteraction : MonoBehaviour
         interaction = GetComponentInChildren<Interaction>();
         ExeclaimationMark.SetActive(false);
 
+
         if (gameManager.coworker < 1 )
         {
             foreach (GameObject obj in ChildObject)

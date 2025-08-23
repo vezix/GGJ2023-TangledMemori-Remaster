@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int Hobject = 0;
     public int Oobject = 0;
     public int TrainEnter = 0;
+    public int tuto = 0;
 
     void Awake()
     {

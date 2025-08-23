@@ -780,6 +780,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGSong: TreeRoom
+  BGSong1: 
+  TreeRoom: 1
+  Home: 0
+  Office: 0
+  Train: 0
+  basic: 0
 --- !u!1 &1205074639
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1408,7 @@ MonoBehaviour:
   Hobject: 0
   Oobject: 0
   TrainEnter: 0
+  tuto: 0
 --- !u!4 &1585121298
 Transform:
   m_ObjectHideFlags: 0

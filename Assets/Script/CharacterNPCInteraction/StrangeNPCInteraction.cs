@@ -15,6 +15,7 @@ public class StrangeNPCInteraction : MonoBehaviour
     public GameObject Jumscare;
     public GameObject ClockInteraction;
     public string scene;
+    public string BGSong;
 
     private bool insideTrigger;
     [SerializeField]
@@ -27,6 +28,7 @@ public class StrangeNPCInteraction : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         interaction = GetComponentInChildren<Interaction>();
         ExeclaimationMark.SetActive(false);
+
 
         if (gameManager.TrainEnter == 0)
         {
@@ -106,6 +108,8 @@ public class StrangeNPCInteraction : MonoBehaviour
                     RefreshInteraction();
                     WalletFirstTime = false;
                     gameManager.wallet = 2;
+                    FindObjectOfType<AudioManager>().stopAllBG();
+                    FindObjectOfType<AudioManager>().PlayBG(BGSong);
                 }
                 interaction.DialogueStart();
             }

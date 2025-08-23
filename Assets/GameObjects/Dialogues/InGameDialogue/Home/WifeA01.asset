@@ -15,4 +15,4 @@ MonoBehaviour:
   npcName: Linda
   Image: {fileID: 21300000, guid: 8df7c4006ef73c3449fea3c1f9e6b087, type: 3}
   npcConvo:
-  - Hi Honey, where are your legs?
+  - Welcome back Honey, where are your legs?

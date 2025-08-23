@@ -181,6 +181,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGSong: MainMenu
+  BGSong1: 
+  Mainmenu: 0
+  Home: 0
+  Office: 0
+  Train: 0
+  basic: 1
 --- !u!1 &259151460
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +725,7 @@ MonoBehaviour:
   Hobject: 0
   Oobject: 0
   TrainEnter: 0
+  tuto: 0
 --- !u!4 &1176973569
 Transform:
   m_ObjectHideFlags: 0
