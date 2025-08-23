@@ -102,6 +102,7 @@ public class GhostBehind : MonoBehaviour
         interaction1.DialogueStart();
         Chang.SetActive(false);
         yield return new WaitForSeconds(1f);
+        FindObjectOfType<AudioManager>().stopAllBG();
         Note.SetActive(true);
         portal.SetActive(true);
         this.gameObject.SetActive(false);

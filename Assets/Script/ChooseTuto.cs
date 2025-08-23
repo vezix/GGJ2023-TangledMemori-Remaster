@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.VisualScripting;
 
 public class ChooseTuto : MonoBehaviour
 {
@@ -76,6 +77,7 @@ public class ChooseTuto : MonoBehaviour
     IEnumerator Right()
     {
         ButtonBlocker.SetActive(true);
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
         Textbox.text = ".....";
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene(scene);

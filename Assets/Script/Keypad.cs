@@ -25,6 +25,7 @@ public class Keypad : MonoBehaviour
     bool ghostjs=false;
 
     public GameObject wife;
+    public GameObject Actualwife;
     bool wifejs = false;
 
     public GameObject portal;
@@ -204,9 +205,11 @@ public class Keypad : MonoBehaviour
         yield return new WaitForSeconds(3f);
         wifejs = false;
         ghostjs = false;
-        Blackscreen.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-        //portal.SetActive(true);
-        SceneManager.LoadScene(scene);
+        Actualwife.SetActive(false);
+        FindObjectOfType<AudioManager>().stopAllBG();
+        //Blackscreen.SetActive(true);
+        //yield return new WaitForSeconds(0.5f);
+        portal.SetActive(true);
+        //SceneManager.LoadScene(scene);
     }
 }

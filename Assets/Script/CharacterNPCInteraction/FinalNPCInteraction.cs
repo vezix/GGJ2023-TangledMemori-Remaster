@@ -74,7 +74,7 @@ public class FinalNPCInteraction : MonoBehaviour
         GameLogo.gameObject.SetActive(true);
         FindObjectOfType<AudioManager>().stopAllBG();
         FindObjectOfType<AudioManager>().PlaySFX(ClockSFX);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
         this.gameObject.SetActive(false);
         SceneManager.LoadScene(scene);
         //Jumscare.gameObject.SetActive(false);

@@ -131,6 +131,7 @@ public class ChooseFinal : MonoBehaviour
         Textbox.text = "You Are Correct";
         yield return new WaitForSeconds(1.0f);
         whitescreen.SetActive(true);
+        FindObjectOfType<AudioManager>().stopAllBG();
         this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
         TextObject.SetActive(false);
         yield return new WaitForSeconds(3.0f);
